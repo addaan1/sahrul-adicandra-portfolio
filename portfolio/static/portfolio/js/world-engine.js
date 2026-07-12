@@ -374,7 +374,7 @@
     const mesh = (geometry, position, scale, rotation, color, options={}) => ({
         geometry, position:[...position], scale:[...scale], rotation:[...rotation], color, alpha:options.alpha ?? 1,
         glow:options.glow ?? .08, transparent:options.transparent ?? false, spin:options.spin || [0,0,0], bob:options.bob || 0,
-        phase:options.phase || Math.random()*Math.PI*2,
+        phase:options.phase || Math.random()*Math.PI*2, scene: Number.isInteger(options.scene) ? options.scene : null,
     });
 
     const staticObjects=[];
@@ -382,6 +382,7 @@
     const trackObjects=[];
     const islandObjects=[];
     const crystalObjects=[];
+    const landmarkObjects=[];
 
     // Floating rail system
     trackObjects.push(mesh(geometries.torus,[4.8,1.1,-3.8],[8.7,.6,8.7],[0,0,0],"#6c6047",{glow:.12}));
@@ -423,6 +424,67 @@
         staticObjects.push(mesh(geometries.torus,[p[0],p[1]+2,p[2]],[1.3,1.3,.45],[Math.PI/2,0,0],idx===1?"#7eeadd":"#6e86a8",{glow:.28}));
     });
 
+
+
+    // Scene landmarks: each portfolio section has a distinct architectural focal point.
+    // They fade between scenes so the environment communicates progress instead of only moving the camera.
+    const landmark = (geometry, position, scale, rotation, color, options={}) => {
+        const object = mesh(geometry, position, scale, rotation, color, options);
+        landmarkObjects.push(object);
+        return object;
+    };
+
+    // 01 Overview — sunrise gate and observatory arch.
+    landmark(geometries.cylinder,[2.4,3.0,-5.2],[.28,2.8,.28],[0,0,0],"#6f94a5",{scene:0,glow:.18});
+    landmark(geometries.cylinder,[7.2,3.0,-5.2],[.28,2.8,.28],[0,0,0],"#6f94a5",{scene:0,glow:.18});
+    landmark(geometries.torus,[4.8,5.4,-5.2],[2.4,2.4,.52],[Math.PI/2,0,0],"#f4c870",{scene:0,glow:.9,spin:[0,.18,0]});
+    landmark(geometries.sphere,[4.8,5.4,-5.2],[.52,.52,.52],[0,0,0],"#fff0bd",{scene:0,glow:1,bob:.12});
+
+    // 02 About — profile observatory with orbiting identity rings.
+    landmark(geometries.cylinder,[8.2,2.2,-5.4],[2.0,.28,2.0],[0,0,0],"#426879",{scene:1,glow:.12});
+    landmark(geometries.crystal,[8.2,4.1,-5.4],[1.1,2.1,1.1],[0,0,0],"#78e5df",{scene:1,glow:.78,bob:.14,spin:[0,.16,0]});
+    landmark(geometries.torusThin,[8.2,4.1,-5.4],[2.1,2.1,2.1],[Math.PI/2,.2,0],"#f2c46f",{scene:1,glow:.68,spin:[0,.24,0]});
+    landmark(geometries.torusThin,[8.2,4.1,-5.4],[2.7,2.7,2.7],[0,.35,.45],"#87a9e8",{scene:1,glow:.34,spin:[.1,.18,0]});
+
+    // 03 Skills — a visible data reactor with five capability nodes.
+    landmark(geometries.sphere,[.2,4.0,-4.3],[1.15,1.15,1.15],[0,0,0],"#f2c46f",{scene:2,glow:1,bob:.12});
+    landmark(geometries.torus,[.2,4.0,-4.3],[2.2,2.2,2.2],[Math.PI/2,0,0],"#73dedf",{scene:2,glow:.65,spin:[0,.25,0]});
+    landmark(geometries.torusThin,[.2,4.0,-4.3],[3.1,3.1,3.1],[.45,0,.25],"#f6d892",{scene:2,glow:.5,spin:[.12,.16,.08]});
+    for(let n=0;n<5;n++){
+        const a=n/5*Math.PI*2;
+        landmark(geometries.crystal,[.2+Math.cos(a)*3.2,4+Math.sin(a*.7)*.45,-4.3+Math.sin(a)*3.2],[.34,.82,.34],[0,a,0],n%2?"#7ee8df":"#f3c66f",{scene:2,glow:.78,bob:.2,phase:n});
+    }
+
+    // 04 Projects — six illuminated project monoliths arranged as a public gallery.
+    for(let n=0;n<6;n++){
+        const a=n/6*Math.PI*2+.18,r=4.2;
+        const colors=["#72e5e0","#f1c66c","#f0a95f","#e98f80","#9b9ff2","#70d6a4"];
+        landmark(geometries.box,[4.8+Math.cos(a)*r,3.1,-4+Math.sin(a)*r],[.82,1.65,.16],[0,-a+Math.PI/2,0],colors[n],{scene:3,glow:.72,bob:.08,phase:n});
+        landmark(geometries.box,[4.8+Math.cos(a)*r,1.35,-4+Math.sin(a)*r],[1.05,.12,.54],[0,-a+Math.PI/2,0],"#3d6575",{scene:3,glow:.1});
+    }
+    landmark(geometries.torusThin,[4.8,3.0,-4],[5.2,5.2,5.2],[Math.PI/2,0,0],"#f4c870",{scene:3,glow:.44,spin:[0,.08,0]});
+
+    // 05 Experience — a connected bridge of milestones and signal towers.
+    for(let n=0;n<7;n++){
+        const x=-1.8+n*2.1,z=-1.5-Math.sin(n*.75)*2.2,y=1.4+n*.12;
+        landmark(geometries.box,[x,y,z],[.92,.12,.55],[0,.12*n,0],n%2?"#6fd2b1":"#77dce7",{scene:4,glow:.3});
+        landmark(geometries.cylinder,[x,y+1.05,z],[.12,1.0,.12],[0,0,0],"#f2c46f",{scene:4,glow:.48});
+        landmark(geometries.sphere,[x,y+2.05,z],[.22,.22,.22],[0,0,0],"#fff0bd",{scene:4,glow:1,bob:.08,phase:n});
+    }
+
+    // 06 Recognition — a golden monument with a crown of orbiting signals.
+    landmark(geometries.cone,[3.2,3.0,-8.0],[1.45,4.0,1.45],[0,0,0],"#dcae58",{scene:5,glow:.5});
+    landmark(geometries.crystal,[3.2,7.0,-8.0],[.9,1.55,.9],[0,0,0],"#ffe4a4",{scene:5,glow:1,bob:.1,spin:[0,.14,0]});
+    landmark(geometries.torusThin,[3.2,6.2,-8.0],[2.5,2.5,2.5],[Math.PI/2,0,0],"#8fb9ff",{scene:5,glow:.55,spin:[0,.18,0]});
+    landmark(geometries.torusThin,[3.2,6.2,-8.0],[3.3,3.3,3.3],[0,.2,.45],"#f2c46f",{scene:5,glow:.48,spin:[.1,.12,0]});
+
+    // 07 Contact — a sunrise communication beacon with expanding signal rings.
+    landmark(geometries.cylinder,[5.0,3.0,-4.1],[.42,3.2,.42],[0,0,0],"#6d91a4",{scene:6,glow:.2});
+    landmark(geometries.crystal,[5.0,7.0,-4.1],[.82,1.25,.82],[0,0,0],"#fff0bd",{scene:6,glow:1,bob:.14,spin:[0,.18,0]});
+    landmark(geometries.torusThin,[5.0,6.6,-4.1],[2.0,2.0,2.0],[Math.PI/2,0,0],"#f2c46f",{scene:6,glow:.72,spin:[0,.2,0]});
+    landmark(geometries.torusThin,[5.0,6.6,-4.1],[3.2,3.2,3.2],[Math.PI/2,0,0],"#7ee8df",{scene:6,glow:.4,spin:[0,-.12,0]});
+    landmark(geometries.torusThin,[5.0,6.6,-4.1],[4.4,4.4,4.4],[Math.PI/2,0,0],"#f5d78e",{scene:6,glow:.25,spin:[0,.08,0]});
+
     // Cloud banks: low-poly translucent spheres
     const cloudCount = mobile ? 30 : 54;
     for(let i=0;i<cloudCount;i++){
@@ -461,13 +523,13 @@
     ];
 
     const cameraScenes = [
-        {eye:[-7.0,9.4,20.5],target:[5.0,1.2,-4.2],fov:47},
-        {eye:[15.5,9.0,18.5],target:[4.2,1.0,-4.5],fov:46},
-        {eye:[-11.5,8.5,14.0],target:[4.0,1.0,-4.5],fov:47},
-        {eye:[5.0,15.0,23.5],target:[5.0,1.0,-4.0],fov:50},
-        {eye:[18.0,8.0,11.0],target:[4.0,.8,-4.0],fov:47},
-        {eye:[-10.0,14.0,6.0],target:[4.5,1.8,-7.0],fov:45},
-        {eye:[6.0,9.5,24.5],target:[5.0,1.1,-4.0],fov:48},
+        {eye:[-7.0,9.4,20.5],target:[4.8,3.5,-5.0],fov:47},
+        {eye:[16.0,8.2,15.5],target:[8.2,3.6,-5.4],fov:45},
+        {eye:[-12.0,9.2,11.5],target:[.2,3.8,-4.3],fov:46},
+        {eye:[5.0,14.5,20.0],target:[4.8,2.8,-4.0],fov:49},
+        {eye:[17.0,8.0,10.0],target:[4.8,2.1,-2.6],fov:47},
+        {eye:[-9.0,12.5,5.0],target:[3.2,4.8,-8.0],fov:45},
+        {eye:[6.0,8.8,20.5],target:[5.0,4.2,-4.1],fov:47},
     ];
 
     let camera = {...cameraScenes[0],eye:[...cameraScenes[0].eye],target:[...cameraScenes[0].target]};
@@ -494,17 +556,20 @@
     };
 
     const drawMesh = (object, viewProjection, time) => {
+        const visibility = object.scene === null ? 1 : Math.max(0, 1 - Math.abs(sceneIndex - object.scene) * 1.25);
+        if (visibility < .015) return;
         object.rotation[0]+=object.spin[0]*.002;
         object.rotation[1]+=object.spin[1]*.002;
         object.rotation[2]+=object.spin[2]*.002;
-        const pos=[object.position[0],object.position[1]+Math.sin(time*.55+object.phase)*object.bob,object.position[2]];
+        const sceneLift = object.scene === null ? 0 : (1 - visibility) * -2.2;
+        const pos=[object.position[0],object.position[1]+sceneLift+Math.sin(time*.55+object.phase)*object.bob,object.position[2]];
         const model=mat4.compose(pos,object.rotation,object.scale);
         bindGeometry(object.geometry);
         gl.uniformMatrix4fv(meshLoc.model,false,model);
         gl.uniformMatrix3fv(meshLoc.normalMatrix,false,normalMatrixFromModel(model));
         gl.uniform3fv(meshLoc.color,hex(object.color));
-        gl.uniform1f(meshLoc.alpha,object.alpha);
-        gl.uniform1f(meshLoc.glow,object.glow);
+        gl.uniform1f(meshLoc.alpha,object.alpha * visibility);
+        gl.uniform1f(meshLoc.glow,object.glow * (.65 + visibility * .35));
         gl.drawElements(gl.TRIANGLES,object.geometry.count,gl.UNSIGNED_SHORT,0);
     };
 
@@ -573,6 +638,10 @@
         gl.uniform1f(meshLoc.fogFar,72);
 
         staticObjects.forEach(obj=>drawMesh(obj,viewProjection,elapsed));
+        gl.enable(gl.BLEND);
+        gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
+        landmarkObjects.forEach(obj=>drawMesh(obj,viewProjection,elapsed));
+        gl.disable(gl.BLEND);
         drawTrain(viewProjection,elapsed);
 
         gl.disable(gl.CULL_FACE);

@@ -1,39 +1,30 @@
 from django.test import TestCase
 from django.urls import reverse
 
-from .models import ContactMessage
 
 
 class PortfolioTests(TestCase):
-    def test_home_page_renders_profile(self):
+    def test_home_page_renders_professional_profile(self):
         response = self.client.get(reverse("portfolio:home"))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Sahrul Adicandra Effendy")
-        self.assertContains(response, "EcoDash Economic Intelligence")
+        self.assertContains(response, "Selected Projects")
+        self.assertContains(response, "March Machine Learning Mania 2026")
+        self.assertContains(response, "Dataset Doctor")
 
-    def test_contact_message_is_saved(self):
+    def test_contact_form_has_been_removed(self):
+        response = self.client.get(reverse("portfolio:home"))
+        self.assertNotContains(response, "Send transmission")
+        self.assertNotContains(response, "<form", html=False)
+        self.assertContains(response, "mailto:sahrul.adican.effendy-2023@ftmm.unair.ac.id")
+
+    def test_home_rejects_contact_post_submissions(self):
         response = self.client.post(
             reverse("portfolio:home"),
             {
                 "name": "Recruiter",
                 "email": "recruiter@example.com",
-                "company": "Example Labs",
-                "message": "Let's discuss a data product role.",
-                "website": "",
+                "message": "Hello",
             },
         )
-        self.assertEqual(response.status_code, 302)
-        self.assertEqual(ContactMessage.objects.count(), 1)
-
-    def test_honeypot_blocks_message(self):
-        self.client.post(
-            reverse("portfolio:home"),
-            {
-                "name": "Bot",
-                "email": "bot@example.com",
-                "company": "",
-                "message": "Spam",
-                "website": "https://spam.example.com",
-            },
-        )
-        self.assertEqual(ContactMessage.objects.count(), 0)
+        self.assertEqual(response.status_code, 405)

@@ -1,27 +1,28 @@
-# Cinematic 3D Upgrade Notes
+# Professional Portfolio Redesign Notes
 
-This version is a major visual and interaction redesign of the original portfolio.
+This version keeps the interactive blue–gold 3D environment while repositioning the website as a clear, recruiter-friendly professional portfolio.
 
-## Major additions
+## Main improvements
 
-- New native WebGL procedural world engine
-- Animated celestial train and circular sky rail
-- Floating-island, cloud, crystal, particle, and celestial-body geometry
-- Seven scene-specific camera and lighting states
-- New cinematic chapter transition system
-- New game-inspired HUD and navigation rail
-- New command palette, cinematic mode, and procedural ambient sound
-- Redesigned profile, capabilities, project, journey, achievement, and contact sections
-- Improved project carousel and mission detail experience
-- New desktop and mobile screenshots
-- Updated README and customization guidance
+- Replaced game-oriented labels and copy with professional portfolio language.
+- Rebuilt the project section as a six-card overview so visitors can understand the work without navigating a carousel.
+- Added concise project categories, outcomes, metrics, technology stacks, repository links, and expandable case details.
+- Removed the public contact submission form and all related message-storage behavior.
+- Replaced the form with direct email, LinkedIn, GitHub, Kaggle, and CV links.
+- Added the supplied CV as a downloadable static document.
+- Updated portfolio content using the supplied CV and the latest public GitHub repository listing.
+- Added distinct WebGL landmarks for every section: overview gate, profile observatory, capability reactor, project gallery, experience bridge, recognition monument, and contact beacon.
+- Strengthened text contrast and content surfaces so the 3D background supports rather than competes with the portfolio.
+- Retained scroll-driven transitions, keyboard navigation, quick navigation, reading focus, responsive mobile layout, and reduced-motion support.
 
-## Files substantially redesigned
+## Main files changed
 
+- `portfolio/data.py`
+- `portfolio/views.py`
+- `portfolio/tests.py`
 - `portfolio/templates/portfolio/home.html`
 - `portfolio/static/portfolio/css/style.css`
 - `portfolio/static/portfolio/js/main.js`
-
-## New file
-
 - `portfolio/static/portfolio/js/world-engine.js`
+
+`README.md` was intentionally left unchanged.

@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#071021">
-    <meta name="description" content="Portfolio of Sahrul Adicandra Effendy — data science, machine learning, NLP, cybersecurity analytics, Django, and visual systems.">
-    <meta property="og:title" content="Sahrul Adicandra Effendy — Celestial Data Odyssey">
-    <meta property="og:description" content="A cinematic, interactive portfolio journey through selected data products, machine learning systems, and creative technology.">
+    <meta name="theme-color" content="#071527">
+    <meta name="description" content="Portfolio of Sahrul Adicandra Effendy — data science, machine learning, NLP, analytics, and data-product engineering.">
+    <meta property="og:title" content="Sahrul Adicandra Effendy — Data Science Portfolio">
+    <meta property="og:description" content="Selected projects, experience, capabilities, and professional contact information.">
     <meta property="og:type" content="website">
-    <title>{{ profile.name }} — Celestial Data Odyssey</title>
+    <title>{{ profile.name }} — Data Science Portfolio</title>
     <link rel="icon" href="{% static 'portfolio/img/favicon.svg' %}" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Orbitron:wght@500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
     <script>document.documentElement.classList.remove('no-js');</script>
 </head>
@@ -21,10 +21,10 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <div class="preloader" id="preloader" aria-live="polite">
-        <div class="loader-sigil" aria-hidden="true"><i></i><i></i><span>SA</span></div>
+        <div class="loader-mark" aria-hidden="true"><span>SA</span><i></i></div>
         <div class="loader-copy">
-            <small>Initializing celestial route</small>
-            <strong>Loading world <b id="loaderPercent">0%</b></strong>
+            <small>Preparing portfolio</small>
+            <strong>Loading interactive environment <b id="loaderPercent">0%</b></strong>
             <div class="loader-line"><i id="loaderBar"></i></div>
         </div>
     </div>
@@ -45,44 +45,37 @@
     <div class="cursor-orb" aria-hidden="true"><i></i></div>
 
     <header class="site-header">
-        <a class="brand magnetic" href="#home" aria-label="Back to introduction">
+        <a class="brand magnetic" href="#home" aria-label="Back to overview">
             <span class="brand-emblem"><b>SA</b><i></i></span>
             <span class="brand-copy">
                 <strong>Sahrul Adicandra</strong>
-                <small>Data · Design · Systems</small>
+                <small>Data Science Portfolio</small>
             </span>
         </a>
 
         <nav class="desktop-nav" aria-label="Portfolio sections">
-            <a href="#about">Profile</a>
-            <a href="#skills">Arsenal</a>
-            <a href="#projects">Missions</a>
-            <a href="#journey">Journey</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#journey">Experience</a>
             <a href="#contact">Contact</a>
         </nav>
 
         <div class="header-actions">
-            <button class="icon-control magnetic" type="button" id="commandButton" aria-label="Open command palette" title="Command palette (Ctrl/⌘ K)">
+            <button class="icon-control magnetic" type="button" id="commandButton" aria-label="Open quick navigation" title="Quick navigation (Ctrl/⌘ K)">
                 <span>⌘</span><small>K</small>
-            </button>
-            <button class="icon-control magnetic" type="button" id="soundToggle" aria-label="Enable ambient sound" aria-pressed="false">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.5.2a4 4 0 0 1 0 5.6M19 6.7a7.5 7.5 0 0 1 0 10.6"/></svg>
             </button>
             <button class="icon-control magnetic" type="button" id="focusToggle" aria-label="Enable reading focus" aria-pressed="false" title="Reading focus">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12s3.4-6 9-6 9 6 9 6-3.4 6-9 6-9-6-9-6Z"/><circle cx="12" cy="12" r="2.7"/></svg>
             </button>
-            <button class="icon-control magnetic" type="button" id="cinematicToggle" aria-label="Toggle cinematic mode" aria-pressed="false">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v11H3zM7 7l2-3h6l2 3M8 12h8"/></svg>
-            </button>
-            <a class="header-cta magnetic" href="{{ profile.github }}" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+            <a class="header-cta magnetic" href="{% static 'portfolio/docs/Sahrul_Adicandra_Effendy_CV.pdf' %}" target="_blank" rel="noreferrer">View CV <span>↗</span></a>
         </div>
     </header>
 
     <aside class="journey-hud" aria-label="Section progress">
-        <div class="hud-compass" aria-hidden="true"><i></i><b>N</b><span></span></div>
         <div class="hud-copy">
-            <small id="sceneChapter">Chapter I</small>
-            <strong id="sceneName">Sky Gate</strong>
+            <small id="sceneChapter">Section 01</small>
+            <strong id="sceneName">Overview</strong>
         </div>
         <div class="hud-progress"><i id="hudProgress"></i></div>
         <span class="hud-index"><b id="currentSection">01</b><em>/</em><small id="totalSections">07</small></span>
@@ -90,80 +83,75 @@
 
     <aside class="section-rail" aria-label="Section navigation">
         <div class="rail-line"><i id="railProgress"></i></div>
-        <a href="#home" class="rail-dot is-active"><b>01</b><span>Sky Gate</span></a>
-        <a href="#about" class="rail-dot"><b>02</b><span>Identity Sanctum</span></a>
-        <a href="#skills" class="rail-dot"><b>03</b><span>Engine Core</span></a>
-        <a href="#projects" class="rail-dot"><b>04</b><span>Mission Atlas</span></a>
-        <a href="#journey" class="rail-dot"><b>05</b><span>Route Archive</span></a>
-        <a href="#achievements" class="rail-dot"><b>06</b><span>Hall of Signals</span></a>
-        <a href="#contact" class="rail-dot"><b>07</b><span>Final Beacon</span></a>
+        <a href="#home" class="rail-dot is-active"><b>01</b><span>Overview</span></a>
+        <a href="#about" class="rail-dot"><b>02</b><span>About</span></a>
+        <a href="#skills" class="rail-dot"><b>03</b><span>Skills</span></a>
+        <a href="#projects" class="rail-dot"><b>04</b><span>Projects</span></a>
+        <a href="#journey" class="rail-dot"><b>05</b><span>Experience</span></a>
+        <a href="#achievements" class="rail-dot"><b>06</b><span>Recognition</span></a>
+        <a href="#contact" class="rail-dot"><b>07</b><span>Contact</span></a>
     </aside>
 
     <div class="world-legend" aria-hidden="true">
-        <span><i class="legend-train"></i> Celestial Line 07</span>
-        <span><i class="legend-dot"></i> Live world engine</span>
+        <span><i class="legend-dot"></i> Interactive 3D environment</span>
+        <span>Blue–gold sunrise theme</span>
     </div>
 
     <main id="main" class="scroll-stage">
-        <section class="panel hero-panel" id="home" data-section="01" data-scene-name="Sky Gate" data-chapter="Chapter I" aria-labelledby="hero-title">
+        <section class="panel hero-panel" id="home" data-section="01" data-scene-name="Overview" data-chapter="Section 01" aria-labelledby="hero-title">
             <div class="panel-atmosphere atmosphere-cyan"></div>
-            <div class="panel-inner hero-layout">
+            <div class="panel-inner hero-layout content-surface">
                 <div class="hero-copy reveal">
-                    <div class="eyebrow"><span class="status-orb"></span> Open to meaningful data work</div>
-                    <p class="hero-kicker">Celestial Data Odyssey · Route 07</p>
-                    <h1 id="hero-title">
-                        <span>Building</span>
-                        <strong data-scramble="intelligent worlds">intelligent worlds</strong>
-                        <span>from data, code, and imagination.</span>
-                    </h1>
+                    <div class="eyebrow"><span class="status-orb"></span> Open to internship opportunities</div>
+                    <p class="hero-kicker">Data Science · Machine Learning · Analytics</p>
+                    <h1 id="hero-title">I build <strong>useful data products</strong> from complex information.</h1>
                     <p class="hero-lead">{{ profile.summary }}</p>
                     <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary magnetic"><span>Enter mission atlas</span><b>↓</b></a>
-                        <a href="{{ profile.linkedin }}" class="btn btn-ghost magnetic" target="_blank" rel="noreferrer"><span>LinkedIn profile</span><b>↗</b></a>
+                        <a href="#projects" class="btn btn-primary magnetic"><span>View selected projects</span><b>↓</b></a>
+                        <a href="{% static 'portfolio/docs/Sahrul_Adicandra_Effendy_CV.pdf' %}" class="btn btn-ghost magnetic" target="_blank" rel="noreferrer"><span>Open CV</span><b>↗</b></a>
                     </div>
-                    <div class="portfolio-signal" aria-label="Portfolio value proposition">
-                        <span>Research grounded</span><span>Product minded</span><span>Built for real users</span>
+                    <div class="portfolio-signal" aria-label="Professional focus">
+                        <span>Evidence-driven</span><span>Product-oriented</span><span>Clear communication</span>
                     </div>
                     <div class="hero-facts">
-                        <div><small>Current quest</small><strong>{{ profile.current_role }}</strong></div>
-                        <div><small>Home station</small><strong>{{ profile.location }}</strong></div>
-                        <div><small>Core discipline</small><strong>Data Science × Creative Technology</strong></div>
+                        <div><small>Current role</small><strong>{{ profile.current_role }}</strong></div>
+                        <div><small>Based in</small><strong>{{ profile.location }}</strong></div>
+                        <div><small>Primary focus</small><strong>ML, NLP, Analytics & Data Products</strong></div>
                     </div>
                 </div>
 
-                <div class="hero-interface reveal reveal-delay" aria-label="Interactive identity interface">
+                <div class="hero-interface reveal reveal-delay" aria-label="Profile summary">
                     <div class="interface-ring ring-one"></div>
                     <div class="interface-ring ring-two"></div>
-                    <div class="hero-card glass-card tilt-card">
-                        <div class="hero-card-top"><span>TRAVELER ID</span><b>DS–013</b></div>
+                    <article class="hero-card glass-card tilt-card">
+                        <div class="hero-card-top"><span>PROFILE</span><b>2026</b></div>
                         <div class="hero-card-portrait">
                             <figure class="portrait-core portrait-photo">
                                 <img src="{% static 'portfolio/img/profile/sahrul-avatar.webp' %}" alt="Portrait of Sahrul Adicandra Effendy">
                                 <span class="portrait-photo-glow"></span>
                                 <i></i>
                             </figure>
-                            <div class="portrait-scanner"></div>
                         </div>
                         <strong>{{ profile.name }}</strong>
                         <small>{{ profile.role }}</small>
-                        <div class="hero-card-status"><i></i><span>Portfolio world online</span></div>
-                    </div>
-                    <div class="floating-chip chip-a"><small>01</small><strong>ML / NLP</strong></div>
-                    <div class="floating-chip chip-b"><small>02</small><strong>Django</strong></div>
-                    <div class="floating-chip chip-c"><small>03</small><strong>Visual Systems</strong></div>
-                    <div class="coordinates">07°17′S · 112°47′E</div>
+                        <div class="hero-card-status"><i></i><span>Available for professional opportunities</span></div>
+                    </article>
+                    <div class="floating-chip chip-a"><small>01</small><strong>Machine Learning</strong></div>
+                    <div class="floating-chip chip-b"><small>02</small><strong>NLP & Analytics</strong></div>
+                    <div class="floating-chip chip-c"><small>03</small><strong>Data Products</strong></div>
                 </div>
             </div>
-            <a class="scroll-invitation magnetic" href="#about"><span>Begin the journey</span><i></i></a>
+            <a class="scroll-invitation magnetic" href="#about"><span>Continue to profile</span><i></i></a>
         </section>
 
-        <section class="panel about-panel" id="about" data-section="02" data-scene-name="Identity Sanctum" data-chapter="Chapter II" aria-labelledby="about-title">
+        <section class="panel about-panel" id="about" data-section="02" data-scene-name="About" data-chapter="Section 02" aria-labelledby="about-title">
             <div class="panel-atmosphere atmosphere-violet"></div>
-            <div class="panel-inner split-layout">
+            <div class="panel-inner split-layout content-surface">
                 <div class="section-intro reveal">
-                    <span class="chapter-label">02 · Identity Sanctum</span>
-                    <h2 id="about-title">A builder who thinks in <em>systems</em>, not isolated outputs.</h2>
-                    <p>I work at the intersection of rigorous analysis, useful software, and visual communication—turning complex information into experiences people can understand, trust, and act on.</p>
+                    <span class="section-label">02 · About</span>
+                    <h2 id="about-title">A data science student who combines <em>analysis, engineering, and visual communication.</em></h2>
+                    <p>{{ profile.headline }}</p>
+                    <p class="section-support">My work spans coursework, competitions, internships, and independent projects. I focus on building solutions that are technically sound, understandable, and practical for real users.</p>
                     <div class="profile-links">
                         <a href="{{ profile.github }}" target="_blank" rel="noreferrer">GitHub <b>↗</b></a>
                         <a href="{{ profile.linkedin }}" target="_blank" rel="noreferrer">LinkedIn <b>↗</b></a>
@@ -174,25 +162,25 @@
                 <article class="identity-console glass-card reveal reveal-delay tilt-card">
                     <div class="console-head">
                         <div><span class="console-dot"></span><span class="console-dot"></span><span class="console-dot"></span></div>
-                        <small>PASSENGER_MANIFEST.JSON</small>
+                        <small>PROFILE OVERVIEW</small>
                         <b>VERIFIED</b>
                     </div>
                     <div class="console-grid">
                         <div class="console-avatar console-photo">
                             <img src="{% static 'portfolio/img/profile/sahrul-portrait.webp' %}" alt="Sahrul Adicandra Effendy">
                             <span class="console-photo-shade"></span>
-                            <small>DATA / CREATIVE</small>
+                            <small>DATA SCIENCE</small>
                         </div>
                         <dl>
-                            <div><dt>Full identity</dt><dd>{{ profile.name }}</dd></div>
-                            <div><dt>Base</dt><dd>{{ profile.location }}</dd></div>
+                            <div><dt>Name</dt><dd>{{ profile.name }}</dd></div>
+                            <div><dt>Location</dt><dd>{{ profile.location }}</dd></div>
                             <div><dt>Education</dt><dd>{{ profile.education }}</dd></div>
-                            <div><dt>Study route</dt><dd>{{ profile.education_period }}</dd></div>
-                            <div><dt>Active role</dt><dd>{{ profile.current_role }}</dd></div>
-                            <div><dt>Availability</dt><dd>{{ profile.availability }}</dd></div>
+                            <div><dt>Study period</dt><dd>{{ profile.education_period }}</dd></div>
+                            <div><dt>Current role</dt><dd>{{ profile.current_role }}</dd></div>
+                            <div><dt>Career interest</dt><dd>{{ profile.availability }}</dd></div>
                         </dl>
                     </div>
-                    <div class="console-tags"><span>Machine Learning</span><span>NLP</span><span>Data Products</span><span>UI/UX</span></div>
+                    <div class="console-tags"><span>Machine Learning</span><span>NLP</span><span>Analytics</span><span>Web Applications</span></div>
                 </article>
 
                 <div class="stat-deck reveal">
@@ -208,29 +196,26 @@
             </div>
         </section>
 
-        <section class="panel skills-panel" id="skills" data-section="03" data-scene-name="Engine Core" data-chapter="Chapter III" aria-labelledby="skills-title">
+        <section class="panel skills-panel" id="skills" data-section="03" data-scene-name="Skills" data-chapter="Section 03" aria-labelledby="skills-title">
             <div class="panel-atmosphere atmosphere-gold"></div>
-            <div class="panel-inner skills-layout">
+            <div class="panel-inner skills-layout content-surface">
                 <div class="section-intro reveal">
-                    <span class="chapter-label">03 · Engine Core</span>
-                    <h2 id="skills-title">A hybrid arsenal for <em>discovering</em>, building, and explaining.</h2>
-                    <p>The strongest solutions are not produced by one algorithm. They emerge from research, engineering, product thinking, and visual clarity working as one system.</p>
+                    <span class="section-label">03 · Skills</span>
+                    <h2 id="skills-title">Technical capability supported by <em>product thinking and communication.</em></h2>
+                    <p>I work across the full path from data exploration and modeling to application development, reporting, and visual explanation.</p>
                 </div>
 
-                <div class="reactor reveal reveal-delay" aria-hidden="true">
-                    <div class="reactor-halo halo-a"></div><div class="reactor-halo halo-b"></div><div class="reactor-halo halo-c"></div>
-                    <div class="reactor-core"><span>DATA</span><b>×</b><span>DESIGN</span><i></i></div>
-                    <span class="reactor-node node-python">Python</span>
-                    <span class="reactor-node node-django">Django</span>
-                    <span class="reactor-node node-pytorch">PyTorch</span>
-                    <span class="reactor-node node-nlp">NLP</span>
-                    <span class="reactor-node node-ux">UI/UX</span>
+                <div class="capability-summary glass-card reveal reveal-delay" aria-label="Capability summary">
+                    <span>Core workflow</span>
+                    <strong>Understand → Model → Validate → Build → Explain</strong>
+                    <p>Tools are selected around the problem, not the other way around.</p>
                 </div>
 
                 <div class="skill-deck">
                     {% for group in skill_groups %}
                     <article class="skill-module glass-card reveal tilt-card">
                         <div class="skill-module-head"><span>{{ group.mark }}</span><h3>{{ group.name }}</h3><i></i></div>
+                        <p>{{ group.description }}</p>
                         <div class="skill-list">{% for skill in group.skills %}<span>{{ skill }}</span>{% endfor %}</div>
                     </article>
                     {% endfor %}
@@ -238,62 +223,56 @@
             </div>
         </section>
 
-        <section class="panel projects-panel" id="projects" data-section="04" data-scene-name="Mission Atlas" data-chapter="Chapter IV" aria-labelledby="projects-title">
+        <section class="panel projects-panel" id="projects" data-section="04" data-scene-name="Selected Projects" data-chapter="Section 04" aria-labelledby="projects-title">
             <div class="panel-atmosphere atmosphere-coral"></div>
-            <div class="panel-inner projects-layout">
+            <div class="panel-inner projects-layout content-surface">
                 <div class="section-intro section-intro-row reveal">
                     <div>
-                        <span class="chapter-label">04 · Mission Atlas</span>
-                        <h2 id="projects-title">Six worlds. Six different <em>problems worth solving</em>.</h2>
+                        <span class="section-label">04 · Selected Projects</span>
+                        <h2 id="projects-title">A concise view of the problems I have worked on and the outcomes I delivered.</h2>
                     </div>
-                    <div class="project-controls">
-                        <button class="magnetic" type="button" data-project-prev aria-label="Previous project">←</button>
-                        <span><b id="projectCurrent">01</b> / 06</span>
-                        <button class="magnetic" type="button" data-project-next aria-label="Next project">→</button>
-                    </div>
+                    <a class="projects-github-link magnetic" href="{{ profile.github }}?tab=repositories" target="_blank" rel="noreferrer">View all repositories <b>↗</b></a>
                 </div>
 
-                <div class="mission-track reveal reveal-delay" data-project-track tabindex="0" aria-label="Selected project missions">
+                <div class="project-grid reveal reveal-delay" aria-label="Featured projects">
                     {% for project in projects %}
-                    <article class="mission-card accent-{{ project.accent }}" data-mission-index="{{ forloop.counter0 }}">
-                        <div class="mission-visual">
-                            <img src="{% static project.image %}" alt="Visual preview for {{ project.title }}">
-                            <div class="mission-grid-overlay"></div>
-                            <span class="mission-number">MISSION {{ project.number }}</span>
-                            <span class="mission-metric">{{ project.metric }}</span>
-                            <div class="mission-scan"></div>
-                        </div>
-                        <div class="mission-content">
-                            <span class="mission-eyebrow">{{ project.eyebrow }}</span>
-                            <h3>{{ project.title }}</h3>
-                            <p>{{ project.summary }}</p>
-                            <div class="mission-stack">{% for item in project.stack %}<span>{{ item }}</span>{% endfor %}</div>
-                            <div class="mission-actions">
-                                <button class="mission-open magnetic" type="button"
-                                    data-project-open
-                                    data-title="{{ project.title }}"
-                                    data-eyebrow="{{ project.eyebrow }}"
-                                    data-detail="{{ project.detail }}"
-                                    data-impact="{{ project.impact }}"
-                                    data-metric="{{ project.metric }}"
-                                    data-url="{{ project.url }}">Open mission file <b>+</b></button>
-                                <a href="{{ project.url }}" target="_blank" rel="noreferrer">Repository ↗</a>
+                    <article class="project-card accent-{{ project.accent }} tilt-card">
+                        <button class="project-card-open" type="button"
+                            data-project-open
+                            data-title="{{ project.title }}"
+                            data-eyebrow="{{ project.category }}"
+                            data-detail="{{ project.detail }}"
+                            data-impact="{{ project.impact }}"
+                            data-metric="{{ project.metric }}"
+                            data-url="{{ project.url }}"
+                            aria-label="Open details for {{ project.title }}">
+                            <div class="project-card-visual">
+                                <img src="{% static project.image %}" alt="" loading="lazy">
+                                <span class="project-number">{{ project.number }}</span>
+                                <span class="project-metric">{{ project.metric }}</span>
                             </div>
-                        </div>
+                            <div class="project-card-body">
+                                <span class="project-category">{{ project.category }}</span>
+                                <h3>{{ project.title }}</h3>
+                                <p>{{ project.summary }}</p>
+                                <div class="project-stack">{% for item in project.stack %}<span>{{ item }}</span>{% endfor %}</div>
+                                <div class="project-card-footer"><span>View case details</span><b>↗</b></div>
+                            </div>
+                        </button>
                     </article>
                     {% endfor %}
                 </div>
-                <p class="track-hint"><i></i> Drag, swipe, or use the arrow controls to travel between mission portals.</p>
+
             </div>
         </section>
 
-        <section class="panel journey-panel" id="journey" data-section="05" data-scene-name="Route Archive" data-chapter="Chapter V" aria-labelledby="journey-title">
+        <section class="panel journey-panel" id="journey" data-section="05" data-scene-name="Experience" data-chapter="Section 05" aria-labelledby="journey-title">
             <div class="panel-atmosphere atmosphere-jade"></div>
-            <div class="panel-inner journey-layout">
+            <div class="panel-inner journey-layout content-surface">
                 <div class="section-intro reveal">
-                    <span class="chapter-label">05 · Route Archive</span>
-                    <h2 id="journey-title">A route shaped by <em>technical depth</em> and visual leadership.</h2>
-                    <p>Every station added a different dimension—from organizational communication and design leadership to applied cybersecurity analytics and data-product development.</p>
+                    <span class="section-label">05 · Experience & Education</span>
+                    <h2 id="journey-title">A developing profile shaped by <em>technical work, leadership, and communication.</em></h2>
+                    <p>My experience combines applied data work with organizational leadership and visual communication responsibilities.</p>
                 </div>
 
                 <div class="route-map reveal reveal-delay">
@@ -314,20 +293,19 @@
             </div>
         </section>
 
-        <section class="panel achievements-panel" id="achievements" data-section="06" data-scene-name="Hall of Signals" data-chapter="Chapter VI" aria-labelledby="achievements-title">
+        <section class="panel achievements-panel" id="achievements" data-section="06" data-scene-name="Recognition" data-chapter="Section 06" aria-labelledby="achievements-title">
             <div class="panel-atmosphere atmosphere-royal"></div>
-            <div class="panel-inner achievements-layout">
+            <div class="panel-inner achievements-layout content-surface">
                 <div class="section-intro reveal">
-                    <span class="chapter-label">06 · Hall of Signals</span>
-                    <h2 id="achievements-title">Signals of range, resilience, and <em>iteration</em>.</h2>
-                    <p>Awards mark moments, but the deeper evidence is the ability to diagnose, learn, and rebuild a system until it becomes stronger.</p>
+                    <span class="section-label">06 · Recognition</span>
+                    <h2 id="achievements-title">Selected recognition that reflects <em>consistency, learning, and competition experience.</em></h2>
+                    <p>These milestones complement the project portfolio and show continued development across technical and academic settings.</p>
                 </div>
 
-                <div class="trophy-sanctum reveal reveal-delay">
-                    <div class="sanctum-orbit"></div>
+                <div class="recognition-grid reveal reveal-delay">
                     {% for achievement in achievements %}
-                    <article class="relic-card relic-{{ forloop.counter }} glass-card tilt-card">
-                        <span class="relic-icon">{{ achievement.icon }}</span>
+                    <article class="recognition-card glass-card tilt-card">
+                        <span class="recognition-index">{{ achievement.icon }}</span>
                         <small>{{ achievement.meta }}</small>
                         <h3>{{ achievement.title }}</h3>
                         <p>{{ achievement.description }}</p>
@@ -336,46 +314,38 @@
                     {% endfor %}
                 </div>
 
-                <blockquote class="manifesto reveal">
-                    <span>“</span>
-                    <p>The best portfolio is not a gallery of outputs. It is a record of how you think, test, and make decisions.</p>
-                    <small>Portfolio principle · 2026</small>
+                <blockquote class="portfolio-principle reveal">
+                    <span>Portfolio principle</span>
+                    <p>Strong work should make the problem, reasoning, implementation, and outcome easy to understand.</p>
                 </blockquote>
             </div>
         </section>
 
-        <section class="panel contact-panel" id="contact" data-section="07" data-scene-name="Final Beacon" data-chapter="Final Chapter" aria-labelledby="contact-title">
+        <section class="panel contact-panel" id="contact" data-section="07" data-scene-name="Contact" data-chapter="Section 07" aria-labelledby="contact-title">
             <div class="panel-atmosphere atmosphere-dawn"></div>
-            <div class="panel-inner contact-layout">
+            <div class="panel-inner contact-layout content-surface">
                 <div class="contact-copy reveal">
-                    <span class="chapter-label">07 · Final Beacon</span>
-                    <h2 id="contact-title">Let’s turn a meaningful problem into a world people can <em>use</em>.</h2>
-                    <p>I am open to internships, research collaboration, data-product work, machine learning systems, and creative technical projects with real users.</p>
-                    <div class="contact-links">
-                        <a class="magnetic" href="{{ profile.linkedin }}" target="_blank" rel="noreferrer"><span>LinkedIn</span><small>Professional profile</small><b>↗</b></a>
-                        <a class="magnetic" href="{{ profile.github }}" target="_blank" rel="noreferrer"><span>GitHub</span><small>Code and experiments</small><b>↗</b></a>
-                        <a class="magnetic" href="{{ profile.kaggle }}" target="_blank" rel="noreferrer"><span>Kaggle</span><small>Data science activity</small><b>↗</b></a>
-                    </div>
+                    <span class="section-label">07 · Contact</span>
+                    <h2 id="contact-title">Interested in discussing an internship, project, or technical collaboration?</h2>
+                    <p>The most reliable ways to reach me are through email or LinkedIn. You can also review my public work on GitHub and Kaggle.</p>
+                    <div class="availability-note"><i></i><span>{{ profile.availability }}</span></div>
                 </div>
 
-                <div class="contact-terminal glass-card reveal reveal-delay">
-                    <div class="terminal-head"><span>TRANSMISSION_CONSOLE</span><b>ENCRYPTED CHANNEL</b></div>
-                    {% if messages %}{% for message in messages %}<div class="form-success" role="status">{{ message }}</div>{% endfor %}{% endif %}
-                    <form method="post" novalidate>
-                        {% csrf_token %}
-                        {{ form.website }}
-                        <div class="form-pair">
-                            <div class="form-row"><label for="{{ form.name.id_for_label }}">Your name</label>{{ form.name }}{% for error in form.name.errors %}<span class="field-error">{{ error }}</span>{% endfor %}</div>
-                            <div class="form-row"><label for="{{ form.email.id_for_label }}">Email address</label>{{ form.email }}{% for error in form.email.errors %}<span class="field-error">{{ error }}</span>{% endfor %}</div>
-                        </div>
-                        <div class="form-row"><label for="{{ form.company.id_for_label }}">Company / team</label>{{ form.company }}{% for error in form.company.errors %}<span class="field-error">{{ error }}</span>{% endfor %}</div>
-                        <div class="form-row"><label for="{{ form.message.id_for_label }}">What would you like to build?</label>{{ form.message }}{% for error in form.message.errors %}<span class="field-error">{{ error }}</span>{% endfor %}</div>
-                        <button class="btn btn-primary form-submit magnetic" type="submit"><span>Send transmission</span><b>→</b></button>
-                    </form>
-                    <small class="privacy-note"><i></i> Messages are stored securely in this Django site and visible only to the administrator.</small>
+                <div class="contact-directory reveal reveal-delay" aria-label="Professional contact links">
+                    <a class="contact-primary glass-card magnetic" href="mailto:{{ profile.email }}">
+                        <span class="contact-icon">@</span>
+                        <div><small>Email</small><strong>{{ profile.email }}</strong><p>Best for formal opportunities and collaboration enquiries.</p></div>
+                        <b>↗</b>
+                    </a>
+                    <div class="contact-link-grid">
+                        <a class="glass-card magnetic" href="{{ profile.linkedin }}" target="_blank" rel="noreferrer"><small>LinkedIn</small><strong>Professional profile</strong><span>Message or connect</span><b>↗</b></a>
+                        <a class="glass-card magnetic" href="{{ profile.github }}" target="_blank" rel="noreferrer"><small>GitHub</small><strong>Code & repositories</strong><span>Review public projects</span><b>↗</b></a>
+                        <a class="glass-card magnetic" href="{{ profile.kaggle }}" target="_blank" rel="noreferrer"><small>Kaggle</small><strong>Data science activity</strong><span>Competitions & notebooks</span><b>↗</b></a>
+                        <a class="glass-card magnetic" href="{% static 'portfolio/docs/Sahrul_Adicandra_Effendy_CV.pdf' %}" target="_blank" rel="noreferrer"><small>Curriculum Vitae</small><strong>View full CV</strong><span>Education, skills & projects</span><b>↗</b></a>
+                    </div>
                 </div>
             </div>
-            <footer class="site-footer"><span>Designed and built with Django · Native WebGL · 2026</span><a href="#home">Restart the odyssey ↑</a></footer>
+            <footer class="site-footer"><span>Designed and built with Django · Native WebGL · 2026</span><a href="#home">Back to top ↑</a></footer>
         </section>
     </main>
 
@@ -385,21 +355,21 @@
         <span class="modal-eyebrow" id="modalEyebrow"></span>
         <h2 id="modalTitle"></h2>
         <p id="modalDetail"></p>
-        <div class="modal-impact"><small>Design decision</small><strong id="modalImpact"></strong></div>
-        <div class="modal-footer"><span id="modalMetric"></span><a id="modalLink" href="#" target="_blank" rel="noreferrer">Enter repository ↗</a></div>
+        <div class="modal-impact"><small>Key outcome</small><strong id="modalImpact"></strong></div>
+        <div class="modal-footer"><span id="modalMetric"></span><a id="modalLink" href="#" target="_blank" rel="noreferrer">View repository ↗</a></div>
     </dialog>
 
     <dialog class="command-palette" id="commandPalette" aria-labelledby="commandTitle">
-        <div class="command-head"><span id="commandTitle">Travel command</span><kbd>ESC</kbd></div>
-        <label class="command-search"><span>⌕</span><input id="commandInput" type="search" placeholder="Type a destination or action…" autocomplete="off"></label>
+        <div class="command-head"><span id="commandTitle">Quick navigation</span><kbd>ESC</kbd></div>
+        <label class="command-search"><span>⌕</span><input id="commandInput" type="search" placeholder="Search a section or action…" autocomplete="off"></label>
         <div class="command-list" id="commandList">
-            <button data-command-target="#home"><span>01</span><strong>Sky Gate</strong><small>Introduction</small></button>
-            <button data-command-target="#about"><span>02</span><strong>Identity Sanctum</strong><small>Profile</small></button>
-            <button data-command-target="#skills"><span>03</span><strong>Engine Core</strong><small>Capabilities</small></button>
-            <button data-command-target="#projects"><span>04</span><strong>Mission Atlas</strong><small>Projects</small></button>
-            <button data-command-target="#journey"><span>05</span><strong>Route Archive</strong><small>Experience</small></button>
-            <button data-command-target="#achievements"><span>06</span><strong>Hall of Signals</strong><small>Achievements</small></button>
-            <button data-command-target="#contact"><span>07</span><strong>Final Beacon</strong><small>Contact</small></button>
+            <button data-command-target="#home"><span>01</span><strong>Overview</strong><small>Introduction</small></button>
+            <button data-command-target="#about"><span>02</span><strong>About</strong><small>Profile</small></button>
+            <button data-command-target="#skills"><span>03</span><strong>Skills</strong><small>Capabilities</small></button>
+            <button data-command-target="#projects"><span>04</span><strong>Selected Projects</strong><small>Project overview</small></button>
+            <button data-command-target="#journey"><span>05</span><strong>Experience</strong><small>Work and education</small></button>
+            <button data-command-target="#achievements"><span>06</span><strong>Recognition</strong><small>Selected achievements</small></button>
+            <button data-command-target="#contact"><span>07</span><strong>Contact</strong><small>Professional links</small></button>
             <a href="{{ profile.github }}" target="_blank" rel="noreferrer"><span>↗</span><strong>Open GitHub</strong><small>External link</small></a>
         </div>
         <div class="command-footer"><span><kbd>↑</kbd><kbd>↓</kbd> Navigate</span><span><kbd>Enter</kbd> Select</span></div>

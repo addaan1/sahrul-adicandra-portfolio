@@ -1,18 +1,19 @@
-from django.contrib import messages
-from django.shortcuts import redirect, render
-from django.urls import reverse
+from django.shortcuts import render
+from django.views.decorators.http import require_GET
 
-from .data import ACHIEVEMENTS, JOURNEY, PROFILE, PROJECTS, SKILL_GROUPS, STATS
-from .forms import ContactForm
+from .data import (
+    ACHIEVEMENTS,
+    ADDITIONAL_PROJECTS,
+    JOURNEY,
+    PROFILE,
+    PROJECTS,
+    SKILL_GROUPS,
+    STATS,
+)
 
 
+@require_GET
 def home(request):
-    form = ContactForm(request.POST or None)
-    if request.method == "POST" and form.is_valid():
-        form.save()
-        messages.success(request, "Message received. Thank you for reaching out.")
-        return redirect(f"{reverse('portfolio:home')}#contact")
-
     return render(
         request,
         "portfolio/home.html",
@@ -21,8 +22,8 @@ def home(request):
             "stats": STATS,
             "skill_groups": SKILL_GROUPS,
             "projects": PROJECTS,
+            "additional_projects": ADDITIONAL_PROJECTS,
             "journey": JOURNEY,
             "achievements": ACHIEVEMENTS,
-            "form": form,
         },
     )

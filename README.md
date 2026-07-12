@@ -6,34 +6,64 @@
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![WebGL](https://img.shields.io/badge/WebGL-990000?style=for-the-badge&logo=webgl&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Gunicorn](https://img.shields.io/badge/Gunicorn-499848?style=for-the-badge&logo=gunicorn&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-A personal portfolio website to showcase my background, skills, work experience, achievements, and projects. Built with **Django 5.2** and vanilla HTML/CSS/JavaScript, featuring a fully responsive design with smooth scroll navigation, a working contact form, and Docker support for easy deployment.
+A personal portfolio website built to present my background, skills, work experience, achievements, and selected projects. Developed with **Django 5.2**, vanilla HTML/CSS/JavaScript, and a custom WebGL 3D environment. Fully responsive, accessible, and deployable via Docker.
+
+---
 
 ## Screenshots
 
-| Hero | Profile |
-|------|---------|
-| ![Hero section](docs/screenshots/01-hero.png) | ![Profile section](docs/screenshots/02-about.png) |
+**Overview**
 
-| Skills | Projects |
-|--------|----------|
-| ![Skills section](docs/screenshots/03-skills.png) | ![Projects section](docs/screenshots/04-projects.png) |
+![Hero](docs/screenshots/01-hero.png)
+
+**About & Profile**
+
+![About](docs/screenshots/02-about.png)
+
+**Skills**
+
+![Skills](docs/screenshots/03-skills.png)
+
+**Selected Projects**
+
+![Projects](docs/screenshots/04-projects.png)
+
+**Experience**
+
+![Experience](docs/screenshots/05-experience.png)
+
+**Achievements**
+
+![Achievements](docs/screenshots/06-achievements.png)
+
+**Contact**
+
+![Contact](docs/screenshots/07-contact.png)
+
+---
 
 ## Features
 
-- Smooth full-screen scroll navigation across multiple sections
-- Profile, skills, experience, achievements, and project showcase
-- Horizontal project carousel with drag support, keyboard access, and detail dialogs
-- Contact form with CSRF protection, server-side validation, honeypot anti-spam, and Django Admin review
-- Responsive layout for both desktop and mobile
+- Seven-section scroll navigation: Overview, About, Skills, Projects, Experience, Achievements, Contact
+- Interactive 3D background powered by a custom WebGL procedural world engine
+- Profile section with photo, education, current role, and key stats
+- Project showcase with case-detail view, tech tags, and GitHub links
+- Experience and achievement timeline
+- Contact form with CSRF protection, server-side validation, and honeypot anti-spam
+- Django Admin panel for reviewing contact submissions
+- Fully responsive layout for desktop and mobile
 - Keyboard navigation and reduced-motion accessibility support
 - WhiteNoise for static file delivery
 - Gunicorn-ready for production deployment
-- Docker and Docker Compose setup included
+- Docker and Docker Compose support
 - Automated Django tests
+
+---
 
 ## Getting Started
 
@@ -77,6 +107,8 @@ docker compose up --build
 
 Open [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
+---
+
 ## Admin Panel
 
 Create a superuser to review contact form submissions:
@@ -86,6 +118,8 @@ python manage.py createsuperuser
 ```
 
 Access the admin panel at [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).
+
+---
 
 ## Project Structure
 
@@ -101,8 +135,11 @@ Main template and asset files:
 portfolio/templates/portfolio/home.html
 portfolio/static/portfolio/css/style.css
 portfolio/static/portfolio/js/main.js
+portfolio/static/portfolio/js/world-engine.js
 portfolio/static/portfolio/img/
 ```
+
+---
 
 ## Production Deployment
 
@@ -113,11 +150,15 @@ portfolio/static/portfolio/img/
 5. Run `python manage.py migrate` and `python manage.py collectstatic --noinput`.
 6. Serve with Gunicorn or use the provided Docker image.
 
+---
+
 ## Running Tests
 
 ```bash
 python manage.py test
 ```
+
+---
 
 ## License
 

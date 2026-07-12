@@ -1,49 +1,54 @@
 PROFILE = {
     "name": "Sahrul Adicandra Effendy",
     "short_name": "Sahrul",
-    "role": "Data Scientist in the making · Creative technologist",
-    "headline": "I turn complex data into systems people can understand, trust, and use.",
+    "role": "Data Science Undergraduate · Machine Learning, NLP, and Analytics",
+    "headline": "Building useful data products with clear reasoning, reliable engineering, and thoughtful visual communication.",
     "summary": (
-        "Undergraduate Data Science Technology student at Universitas Airlangga, currently building "
-        "data products across machine learning, NLP, forecasting, cybersecurity analytics, and web engineering."
+        "Data Science undergraduate at Universitas Airlangga with hands-on experience in machine learning, "
+        "natural language processing, forecasting, computer vision, analytics, and data-driven web applications."
     ),
     "location": "Surabaya, East Java, Indonesia",
-    "education": "B.Sc. Data Science · Universitas Airlangga",
-    "education_period": "2023 — 2027",
-    "current_role": "Data Science Intern · DSITD Universitas Airlangga",
-    "availability": "Open to on-site, hybrid, and remote opportunities",
+    "education": "B.Sc. Data Science Technology · Universitas Airlangga",
+    "education_period": "2023 — Expected 2027",
+    "current_role": "Data Science Intern · Universitas Airlangga",
+    "availability": "Open to Data Science, Machine Learning, and Data Analyst internships",
+    "email": "sahrul.adican.effendy-2023@ftmm.unair.ac.id",
     "github": "https://github.com/addaan1",
     "linkedin": "https://www.linkedin.com/in/sahrul-adicandra-effendy-b5336b27b/",
     "kaggle": "https://www.kaggle.com/sahruladicandra",
 }
 
 STATS = [
-    {"value": "22+", "label": "public repositories"},
-    {"value": "Top 8%", "label": "Find IT! 2026"},
-    {"value": "602K", "label": "records in largest project"},
-    {"value": "6", "label": "featured case studies"},
+    {"value": "22", "label": "public GitHub repositories"},
+    {"value": "Top 8%", "label": "Find IT! 2026 ranking"},
+    {"value": "650K+", "label": "features generated in one pipeline"},
+    {"value": "6", "label": "featured project case studies"},
 ]
 
 SKILL_GROUPS = [
     {
-        "name": "Data & ML",
+        "name": "Machine Learning & Analytics",
         "mark": "01",
-        "skills": ["Python", "Pandas", "scikit-learn", "PyTorch", "Time Series", "Survival Analysis"],
+        "description": "From exploratory analysis and feature engineering to validation, modeling, and interpretation.",
+        "skills": ["Python", "R", "Pandas", "scikit-learn", "PyTorch", "TensorFlow", "Time Series", "Survival Analysis"],
     },
     {
-        "name": "Language & Vision",
+        "name": "NLP & Computer Vision",
         "mark": "02",
-        "skills": ["NLP", "Transformers", "NMT", "Computer Vision", "EfficientNet", "ConvNeXt"],
+        "description": "Working with text, audio, and image data through classical and deep-learning approaches.",
+        "skills": ["NLP", "Transformers", "Neural Translation", "Computer Vision", "Whisper", "EfficientNet", "ConvNeXt"],
     },
     {
-        "name": "Product Engineering",
+        "name": "Data Product Engineering",
         "mark": "03",
-        "skills": ["Django", "Flask", "PostgreSQL", "Docker", "REST", "Vanilla JavaScript"],
+        "description": "Turning analytical work into accessible tools, dashboards, APIs, and reproducible workflows.",
+        "skills": ["Django", "Flask", "Laravel", "REST API", "SQL", "MySQL", "PostgreSQL", "Docker", "Git"],
     },
     {
-        "name": "Creative Direction",
+        "name": "Communication & Design",
         "mark": "04",
-        "skills": ["UI/UX", "Visual Systems", "Graphic Design", "Affinity Photo", "Content Planning", "Documentation"],
+        "description": "Explaining technical work through structured writing, interface design, and visual systems.",
+        "skills": ["UI/UX", "Data Visualization", "Tableau", "Graphic Design", "Adobe Photoshop", "Illustrator", "Documentation"],
     },
 ]
 
@@ -52,14 +57,14 @@ PROJECTS = [
         "slug": "identity-exposure",
         "number": "01",
         "title": "UNAIR Identity Exposure Intelligence",
-        "eyebrow": "Cybersecurity · Django",
-        "summary": "A defensive intelligence workspace that turns sanitized exposure signals into risk priorities and remediation workflows.",
+        "category": "Cybersecurity Analytics",
+        "summary": "A defensive intelligence dashboard for monitoring sanitized identity exposure findings and prioritizing remediation.",
         "detail": (
-            "Built during a Data Science internship for Universitas Airlangga. The system combines safe identity profiling, "
+            "Built during a Data Science internship at Universitas Airlangga. The system combines safe identity profiling, "
             "domain intelligence, explainable risk scoring, role-based access, audit logs, and sanitized exports."
         ),
-        "impact": "From raw exposure signals to an operational mitigation queue.",
-        "stack": ["Django 5", "PostgreSQL", "Docker", "Chart.js", "Risk Scoring"],
+        "impact": "Converts fragmented exposure signals into a traceable mitigation workflow.",
+        "stack": ["Django 5", "PostgreSQL", "Docker", "Chart.js"],
         "metric": "Defensive-by-design",
         "image": "portfolio/img/projects/identity.svg",
         "url": "https://github.com/addaan1/UNAIR-Identity-Exposure-Dashboard",
@@ -69,87 +74,93 @@ PROJECTS = [
         "slug": "ecodash",
         "number": "02",
         "title": "EcoDash Economic Intelligence",
-        "eyebrow": "Forecasting · Decision Support",
-        "summary": "A multi-horizon economic dashboard for Indonesian inflation, exchange rates, and regional purchasing-power proxies.",
+        "category": "Forecasting & Decision Support",
+        "summary": "A multi-horizon dashboard for Indonesian inflation, purchasing power, exchange rates, and related indicators.",
         "detail": (
-            "Evaluates ARIMA, SARIMAX, Prophet, LSTM, Bi-LSTM, and ensembles separately across 1, 3, 6, and 12-month horizons, "
-            "then communicates uncertainty through walk-forward residual intervals."
+            "Evaluates ARIMA, SARIMAX, Prophet, LSTM, Bi-LSTM, and ensemble models across 1, 3, 6, and 12-month horizons, "
+            "with walk-forward validation and uncertainty communication."
         ),
-        "impact": "One interface for monitoring, comparison, simulation, and presentation.",
-        "stack": ["Django", "PyTorch", "statsmodels", "Prophet", "Ridge"],
+        "impact": "Brings monitoring, forecasting, model comparison, and policy-oriented simulation into one interface.",
+        "stack": ["Django", "PyTorch", "statsmodels", "Prophet"],
         "metric": "4 forecast horizons",
         "image": "portfolio/img/projects/ecodash.svg",
         "url": "https://github.com/addaan1/Project-Machine-Learning",
         "accent": "gold",
     },
     {
-        "slug": "findit",
+        "slug": "march-mania",
         "number": "03",
-        "title": "Face Anti-Spoofing · Find IT! 2026",
-        "eyebrow": "Computer Vision · Competition",
-        "summary": "An end-to-end six-class anti-spoofing pipeline engineered for domain shift, hard samples, and robust private evaluation.",
+        "title": "March Machine Learning Mania 2026",
+        "category": "Predictive Modeling",
+        "summary": "An end-to-end NCAA matchup prediction pipeline with calibrated XGBoost models and an interactive Flask dashboard.",
         "detail": (
-            "Combined EfficientNet-B4 and ConvNeXt with stratified cross-validation, focal loss, semi-automated cleaning, "
-            "and carefully matched inference preprocessing. Ranked Top 27 of 339 teams."
+            "Engineered historical team statistics, dynamic Elo ratings, and consensus expert rankings into more than 650,000 "
+            "matchup features in under four seconds, then calibrated predictions using isotonic regression."
         ),
-        "impact": "A disciplined pivot from leaderboard patching toward generalizable ensembles.",
-        "stack": ["PyTorch", "timm", "Albumentations", "FiftyOne", "CLIP"],
+        "impact": "Achieved Brier Scores of 0.0940 for the men's model and 0.0624 for the women's model.",
+        "stack": ["Python", "XGBoost", "Flask", "Isotonic Calibration"],
+        "metric": "650K+ features",
+        "image": "portfolio/img/projects/march-mania.svg",
+        "url": "https://github.com/addaan1/march-machine-learning-mania-2026",
+        "accent": "amber",
+    },
+    {
+        "slug": "findit",
+        "number": "04",
+        "title": "Find IT! 2026 Face Anti-Spoofing",
+        "category": "Computer Vision",
+        "summary": "A six-class face anti-spoofing workflow designed for domain shift, difficult samples, and robust private evaluation.",
+        "detail": (
+            "Combined EfficientNet-B4 and ConvNeXt with stratified validation, focal loss, semi-automated cleaning, and carefully "
+            "matched inference preprocessing. The project documents both public-score optimization and private robustness."
+        ),
+        "impact": "Reached a public score of 0.76298 and ranked Top 27 of 339 teams.",
+        "stack": ["PyTorch", "timm", "Albumentations", "FiftyOne"],
         "metric": "Top 8% · 27/339",
         "image": "portfolio/img/projects/findit.svg",
         "url": "https://github.com/addaan1/FindIt2026",
         "accent": "coral",
     },
     {
-        "slug": "galbay",
-        "number": "04",
-        "title": "Galbay Predictor",
-        "eyebrow": "Big Data · Financial Behavior",
-        "summary": "A data-first financial behavior coach that maps distress signals across Indonesian fintech conversations.",
-        "detail": (
-            "Curated 602,675 public items from seven sources, identified 58,120 relevant reviews across 11 distress categories, "
-            "and translated findings into a Flask dashboard, decision tools, and a rule-based assistant."
-        ),
-        "impact": "Separates evidence-driven insight, decision support, and demo interactions clearly.",
-        "stack": ["Flask", "Pandas", "scikit-learn", "DVC", "Chart.js"],
-        "metric": "602,675 public items",
-        "image": "portfolio/img/projects/galbay.svg",
-        "url": "https://github.com/addaan1/Final-Project-AKB",
-        "accent": "jade",
-    },
-    {
         "slug": "dataquest",
         "number": "05",
         "title": "Court Sentence Duration Prediction",
-        "eyebrow": "NLP · Ensemble ML",
-        "summary": "A hybrid NLP and ensemble pipeline for predicting prison sentence duration from Indonesian court decisions.",
+        "category": "Natural Language Processing",
+        "summary": "A hybrid NLP and ensemble-learning pipeline for estimating sentence duration from Indonesian court decisions.",
         "detail": (
-            "Processed 23,675 raw court documents with SpaCy, Stanza, Sastrawi, regex features, TF-IDF/SVD, and weighted "
-            "ensembles spanning XGBoost, LightGBM, CatBoost, Random Forest, and stacking."
+            "Processed 23,675 court documents using SpaCy, Stanza, Sastrawi, regex features, TF-IDF/SVD, and weighted ensembles "
+            "spanning XGBoost, LightGBM, CatBoost, Random Forest, and stacking."
         ),
-        "impact": "Transforms long legal narratives into auditable structured signals.",
-        "stack": ["SpaCy", "Stanza", "Sastrawi", "LightGBM", "CatBoost"],
+        "impact": "Turns long legal narratives into structured, auditable predictive signals.",
+        "stack": ["SpaCy", "Stanza", "LightGBM", "CatBoost"],
         "metric": "23,675 documents",
         "image": "portfolio/img/projects/dataquest.svg",
         "url": "https://github.com/addaan1/Dataquest-4.0",
         "accent": "violet",
     },
     {
-        "slug": "madura-nlp",
+        "slug": "dataset-doctor",
         "number": "06",
-        "title": "Warisan Nusantara Translator",
-        "eyebrow": "Neural Translation · Culture",
-        "summary": "A two-way Indonesian–Madura neural translation experience designed as a digital cultural showcase.",
+        "title": "Dataset Doctor",
+        "category": "Open-Source Data Tooling",
+        "summary": "A Python CLI for first-pass dataset quality inspection with terminal, Markdown, and browser-ready HTML reports.",
         "detail": (
-            "Combines Transformers and PyTorch with speech-to-text, expressive cultural art direction, Three.js particles, "
-            "and an accessible web interface grounded in Madurese visual identity."
+            "Implements contextual checks for missing values, duplicates, suspicious semantic roles, and numeric outliers, helping "
+            "analysts identify data-quality risks before deeper modeling work begins."
         ),
-        "impact": "Technology used as a medium for language preservation and cultural access.",
-        "stack": ["Transformers", "PyTorch", "Whisper", "Flask", "Three.js"],
-        "metric": "Bidirectional NMT",
-        "image": "portfolio/img/projects/madura.svg",
-        "url": "https://github.com/addaan1/indo-madura-nlp",
-        "accent": "ruby",
+        "impact": "Makes early dataset review faster, repeatable, and easier to communicate.",
+        "stack": ["Python", "CLI", "HTML Reporting", "Data Quality"],
+        "metric": "Open-source CLI",
+        "image": "portfolio/img/projects/dataset-doctor.svg",
+        "url": "https://github.com/addaan1/dataset-doctor",
+        "accent": "jade",
     },
+]
+
+ADDITIONAL_PROJECTS = [
+    {"title": "Warisan Nusantara Translator", "label": "Indonesian–Madurese NMT", "url": "https://github.com/addaan1/indo-madura-nlp"},
+    {"title": "WiDS Global Datathon 2026", "label": "Wildfire survival analysis", "url": "https://github.com/addaan1/WiDS-Global-Datathon-2026"},
+    {"title": "Galbay Predictor", "label": "Fintech behavior analytics", "url": "https://github.com/addaan1/Final-Project-AKB"},
 ]
 
 JOURNEY = [
@@ -157,36 +168,36 @@ JOURNEY = [
         "period": "Jul 2026 — Present",
         "role": "Data Science Intern",
         "org": "Directorate of Information Systems & Digital Transformation · Universitas Airlangga",
-        "description": "Building an identity exposure intelligence dashboard for cybersecurity monitoring, risk prioritization, and remediation tracking.",
-        "type": "work",
+        "description": "Developing a cybersecurity-focused identity exposure dashboard for monitoring, prioritization, and remediation tracking.",
+        "type": "Professional Experience",
     },
     {
         "period": "Feb 2025 — Jan 2026",
-        "role": "Head of Graphic Division",
-        "org": "HIMATESDA UNAIR · Media & Information Department",
-        "description": "Led the cabinet’s visual system, social media direction, content matrix, cross-department design support, and event documentation.",
-        "type": "leadership",
+        "role": "Head of Graphic Media Information",
+        "org": "HIMATESDA · Universitas Airlangga",
+        "description": "Led visual communication, promotional assets, digital content, and branding consistency across organizational initiatives.",
+        "type": "Leadership",
     },
     {
-        "period": "Jun — Dec 2025",
-        "role": "Coordinator, Publication Documentation & Design",
-        "org": "PHILANTHROPY 2025",
-        "description": "Coordinated visual communication and documentation delivery for a major student program.",
-        "type": "leadership",
+        "period": "Feb 2024 — Dec 2024",
+        "role": "Media Information Staff",
+        "org": "HIMATESDA · Universitas Airlangga",
+        "description": "Produced posters, social media content, event documentation, and coordinated TSD Archives and LinkedIn content.",
+        "type": "Campus Involvement",
     },
     {
-        "period": "Feb 2024 — Jan 2025",
-        "role": "Media & Information Staff",
-        "org": "HIMATESDA UNAIR",
-        "description": "Produced posters, member-introduction videos, podcast visuals, and event documentation for clear public communication.",
-        "type": "creative",
+        "period": "2023 — Present",
+        "role": "Creative Staff",
+        "org": "TSD Executive Board",
+        "description": "Managed Instagram content for Vidyadatum and designed promotional materials for internal student activities.",
+        "type": "Campus Involvement",
     },
     {
-        "period": "Jul 2023 — Jul 2027",
-        "role": "Bachelor of Data Science",
-        "org": "Universitas Airlangga",
-        "description": "Studying data mining, machine learning, deep learning, NLP, statistics, databases, and data-product development.",
-        "type": "education",
+        "period": "2023 — Expected 2027",
+        "role": "B.Sc. Data Science Technology",
+        "org": "Universitas Airlangga · Surabaya",
+        "description": "Focused on data mining, machine learning, NLP, databases, statistics, and data-product development.",
+        "type": "Education",
     },
 ]
 
@@ -195,18 +206,18 @@ ACHIEVEMENTS = [
         "title": "Top 8% · Find IT! 2026",
         "meta": "Top 27 of 339 teams · Universitas Gadjah Mada",
         "description": "Six-class face anti-spoofing competition using robust computer-vision ensembles.",
-        "icon": "✦",
+        "icon": "01",
     },
     {
         "title": "National Bronze Medal · Physics",
         "meta": "Olimpiade Update Festival IX · 2024",
         "description": "Bronze medal in a national-level university physics olympiad.",
-        "icon": "◆",
+        "icon": "02",
     },
     {
-        "title": "9 Licenses & Certifications",
-        "meta": "Data science, NLP, image processing, and competition participation",
-        "description": "Includes Academic Competition of Data Science 2025 and Objective Quest 2025.",
-        "icon": "◈",
+        "title": "Selected Certifications",
+        "meta": "Data science, NLP, image processing, and analytics",
+        "description": "Continuous learning through technical courses, project-based programs, and competition participation.",
+        "icon": "03",
     },
 ]

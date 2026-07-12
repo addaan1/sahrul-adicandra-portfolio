@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3b2c42"/><stop offset="1" stop-color="#08131f"/></linearGradient>
+  <radialGradient id="r"><stop stop-color="#f4b860" stop-opacity=".3"/><stop offset="1" stop-color="#f4b860" stop-opacity="0"/></radialGradient>
+  <filter id="s"><feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#020812" flood-opacity=".45"/></filter>
+</defs>
+<rect width="1200" height="700" fill="url(#g)"/><circle cx="650" cy="340" r="340" fill="url(#r)"/>
+<g opacity=".11" stroke="#fff"><path d="M0 100h1200M0 200h1200M0 300h1200M0 400h1200M0 500h1200M0 600h1200M100 0v700M200 0v700M300 0v700M400 0v700M500 0v700M600 0v700M700 0v700M800 0v700M900 0v700M1000 0v700M1100 0v700"/></g>
+<g filter="url(#s)">
+  <circle cx="600" cy="350" r="164" fill="none" stroke="#f4b860" stroke-width="18"/>
+  <path d="M600 186c-82 45-135 103-164 174M600 514c82-45 135-103 164-174M437 344c47 4 105 22 163 55M763 356c-47-4-105-22-163-55M596 186c-14 58-14 112 4 165M604 514c14-58 14-112-4-165" fill="none" stroke="#ffe7bc" stroke-width="12" stroke-linecap="round"/>
+  <path d="m365 500 105-78 82 32 94-132 83 42 115-146" fill="none" stroke="#7de7df" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="72" y="92" fill="#f4b860" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="5">SPORTS / PREDICTION</text>
+<text x="72" y="632" fill="#eaf3f7" font-family="Arial, sans-serif" font-size="22" font-weight="700">SAHRUL / SELECTED WORK</text>
+<circle cx="1085" cy="88" r="28" fill="none" stroke="#f4b860" stroke-width="5"/><path d="M1072 88h26m-13-13v26" stroke="#f4b860" stroke-width="4"/>
+</svg>
