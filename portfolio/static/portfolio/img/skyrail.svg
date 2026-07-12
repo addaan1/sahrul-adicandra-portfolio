@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+<title id="title">Celestial sky rail</title><desc id="desc">A futuristic train travels along a floating circular railway above clouds and data constellations.</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#183b57"/><stop offset=".48" stop-color="#0f273d"/><stop offset="1" stop-color="#0a1726"/></linearGradient>
+  <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#65e7df"/><stop offset=".5" stop-color="#f2d27f"/><stop offset="1" stop-color="#7f8bff"/></linearGradient>
+  <linearGradient id="train" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6fffd"/><stop offset=".4" stop-color="#a9f2e6"/><stop offset="1" stop-color="#54b5c1"/></linearGradient>
+  <linearGradient id="island" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6ea89b"/><stop offset=".45" stop-color="#315565"/><stop offset="1" stop-color="#102236"/></linearGradient>
+  <radialGradient id="glow"><stop stop-color="#73e6dc" stop-opacity=".7"/><stop offset="1" stop-color="#73e6dc" stop-opacity="0"/></radialGradient>
+  <filter id="blur"><feGaussianBlur stdDeviation="16"/></filter>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#020812" flood-opacity=".45"/></filter>
+</defs>
+<ellipse cx="485" cy="358" rx="300" ry="246" fill="url(#sky)" opacity=".55"/>
+<ellipse cx="470" cy="354" rx="286" ry="215" fill="none" stroke="#8ddfd7" stroke-opacity=".15" stroke-width="2"/>
+<ellipse cx="470" cy="354" rx="240" ry="174" fill="none" stroke="#fff" stroke-opacity=".1" stroke-dasharray="8 16" transform="rotate(-10 470 354)"/>
+<ellipse cx="470" cy="356" rx="220" ry="132" fill="url(#glow)" opacity=".18" filter="url(#blur)"/>
+
+<g opacity=".9">
+  <circle cx="155" cy="155" r="3" fill="#f2d27f"/><circle cx="714" cy="150" r="3" fill="#75e5dd"/><circle cx="775" cy="260" r="2" fill="#fff"/>
+  <circle cx="132" cy="305" r="2" fill="#fff"/><circle cx="643" cy="94" r="2" fill="#fff"/><circle cx="782" cy="414" r="2" fill="#f2d27f"/>
+  <path d="M155 155 210 125 260 170M714 150l61 110M132 305l45 54" fill="none" stroke="#9bded9" stroke-opacity=".2"/>
+</g>
+
+<g filter="url(#shadow)">
+  <path d="M208 372c57-126 190-205 339-184 144 20 247 126 246 239-1 70-41 127-111 167" fill="none" stroke="#07121d" stroke-width="38" stroke-linecap="round"/>
+  <path d="M208 372c57-126 190-205 339-184 144 20 247 126 246 239-1 70-41 127-111 167" fill="none" stroke="url(#rail)" stroke-width="11" stroke-linecap="round"/>
+  <path d="M208 372c57-126 190-205 339-184 144 20 247 126 246 239-1 70-41 127-111 167" fill="none" stroke="#d9fffb" stroke-opacity=".7" stroke-width="2" stroke-dasharray="2 18" stroke-linecap="round"/>
+</g>
+
+<g filter="url(#shadow)">
+  <path d="M300 468c35-15 87-18 132-4 30 9 51 25 56 42 6 21-16 38-56 44-56 9-137 1-169-23-25-20-8-43 37-59z" fill="#203e4b"/>
+  <path d="M294 466c48-42 139-39 191 0-42 10-149 11-191 0z" fill="#88c7a7"/>
+  <path d="M321 490 293 610l43-24 22 54 25-61 40 36 12-125z" fill="url(#island)"/>
+  <rect x="344" y="425" width="88" height="48" rx="10" fill="#102538" stroke="#9ce7d5" stroke-opacity=".4"/>
+  <path d="M355 454v-18h18v18m12 0v-27h18v27m12 0v-14h8v14" fill="none" stroke="#73e6dc" stroke-width="3"/>
+  <circle cx="330" cy="454" r="16" fill="#72d3a7"/><circle cx="455" cy="457" r="14" fill="#f1c66c"/>
+</g>
+
+<g transform="translate(600 244) rotate(13)" filter="url(#shadow)">
+  <path d="M0 28C5 10 22 0 48 0h116c22 0 39 10 47 30l8 20c5 12-4 24-18 24H24C9 74-3 62 1 48z" fill="url(#train)"/>
+  <path d="M44 9h95c18 0 31 8 37 24H31c2-14 6-20 13-24z" fill="#173c52"/>
+  <path d="M52 14h23v14H50zm31 0h26v14H82zm34 0h23v14h-23zm31 1h13c7 3 11 7 14 13h-27z" fill="#6cd3d8" opacity=".85"/>
+  <path d="M16 53h184" stroke="#0d7583" stroke-width="4"/>
+  <circle cx="52" cy="73" r="9" fill="#07121d" stroke="#85eae2" stroke-width="3"/>
+  <circle cx="172" cy="73" r="9" fill="#07121d" stroke="#85eae2" stroke-width="3"/>
+  <path d="M206 31c22 5 39 11 57 22" fill="none" stroke="#72e5e0" stroke-width="3" stroke-linecap="round" opacity=".45"/>
+  <path d="M207 39c26 9 45 20 60 35" fill="none" stroke="#f1c66c" stroke-width="2" stroke-linecap="round" opacity=".35"/>
+</g>
+
+<g opacity=".9">
+  <path d="M120 510c20-30 52-32 72-7 20-17 52-4 54 21 29 0 43 34 18 47H118c-24-14-21-43 2-61z" fill="#d9f4ef" opacity=".17"/>
+  <path d="M650 570c17-27 50-28 67-5 26-15 58 4 55 30 25 4 31 34 7 45H632c-24-17-10-55 18-70z" fill="#d9f4ef" opacity=".14"/>
+  <path d="M90 250c12-21 35-23 50-6 20-8 40 7 39 25 18 3 22 25 6 33H78c-16-13-6-42 12-52z" fill="#fff" opacity=".09"/>
+</g>
+
+<g fill="none" stroke="#fff" stroke-opacity=".16">
+  <path d="M740 102v58m-29-29h58"/><circle cx="740" cy="131" r="23"/>
+  <path d="M190 540v45m-22-22h44"/><circle cx="190" cy="563" r="18"/>
+</g>
+</svg>

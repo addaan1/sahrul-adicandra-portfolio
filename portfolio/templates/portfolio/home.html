@@ -1,0 +1,344 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#08111f">
+    <meta name="description" content="Portfolio of Sahrul Adicandra Effendy — Data Science, Machine Learning, NLP, Django, and creative technology.">
+    <meta property="og:title" content="Sahrul Adicandra Effendy — Data & Creative Technology Portfolio">
+    <meta property="og:description" content="Selected data products, machine learning systems, and visual experiences.">
+    <meta property="og:type" content="website">
+    <title>{{ profile.name }} — Data & Creative Technology</title>
+    <link rel="icon" href="{% static 'portfolio/img/favicon.svg' %}" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+    <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="site-header" aria-label="Primary navigation">
+        <a class="brand" href="#home" aria-label="Back to introduction">
+            <span class="brand-mark">SA</span>
+            <span class="brand-copy">
+                <strong>Sahrul A. E.</strong>
+                <small>Data · Design · Systems</small>
+            </span>
+        </a>
+        <nav class="desktop-nav" aria-label="Portfolio sections">
+            <a href="#about">Profile</a>
+            <a href="#skills">Capabilities</a>
+            <a href="#projects">Projects</a>
+            <a href="#journey">Journey</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a class="header-cta" href="{{ profile.github }}" target="_blank" rel="noreferrer">
+            GitHub <span aria-hidden="true">↗</span>
+        </a>
+    </header>
+
+    <aside class="section-rail" aria-label="Section progress">
+        <span class="section-index"><b id="currentSection">01</b><i></i><em id="totalSections">07</em></span>
+        <div class="rail-dots">
+            <a href="#home" class="rail-dot is-active" aria-label="Introduction"><span>Home</span></a>
+            <a href="#about" class="rail-dot" aria-label="Profile"><span>Profile</span></a>
+            <a href="#skills" class="rail-dot" aria-label="Capabilities"><span>Capabilities</span></a>
+            <a href="#projects" class="rail-dot" aria-label="Selected projects"><span>Projects</span></a>
+            <a href="#journey" class="rail-dot" aria-label="Experience journey"><span>Journey</span></a>
+            <a href="#achievements" class="rail-dot" aria-label="Achievements"><span>Highlights</span></a>
+            <a href="#contact" class="rail-dot" aria-label="Contact"><span>Contact</span></a>
+        </div>
+    </aside>
+
+    <main id="main" class="scroll-stage">
+        <section class="panel hero-panel" id="home" data-section="01" aria-labelledby="hero-title">
+            <div class="aurora aurora-one" aria-hidden="true"></div>
+            <div class="aurora aurora-two" aria-hidden="true"></div>
+            <div class="hero-grid panel-inner">
+                <div class="hero-copy reveal">
+                    <div class="eyebrow"><span class="pulse-dot"></span> Open to meaningful data work</div>
+                    <p class="hero-kicker">Welcome aboard the Celestial Data Line</p>
+                    <h1 id="hero-title">
+                        <span>I build</span>
+                        <strong>intelligent systems</strong>
+                        <span>with a human point of view.</span>
+                    </h1>
+                    <p class="hero-lead">{{ profile.summary }}</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">Explore selected work <span>↓</span></a>
+                        <a href="{{ profile.linkedin }}" class="btn btn-ghost" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+                    </div>
+                    <div class="hero-meta">
+                        <div><small>Currently</small><strong>{{ profile.current_role }}</strong></div>
+                        <div><small>Based in</small><strong>{{ profile.location }}</strong></div>
+                    </div>
+                </div>
+
+                <div class="hero-world reveal reveal-delay" aria-label="Abstract floating sky rail illustration">
+                    <div class="world-orbit orbit-a"></div>
+                    <div class="world-orbit orbit-b"></div>
+                    <img class="skyrail-art parallax-layer" data-depth="0.14" src="{% static 'portfolio/img/skyrail.svg' %}" alt="Futuristic train traveling on a floating circular rail through clouds and data constellations">
+                    <div class="identity-capsule parallax-layer" data-depth="0.26">
+                        <div class="monogram-portrait"><span>SA</span><i></i></div>
+                        <div>
+                            <small>Passenger profile</small>
+                            <strong>{{ profile.name }}</strong>
+                            <span>{{ profile.role }}</span>
+                        </div>
+                    </div>
+                    <div class="floating-tag tag-one parallax-layer" data-depth="0.34">ML / NLP</div>
+                    <div class="floating-tag tag-two parallax-layer" data-depth="0.21">Django</div>
+                    <div class="floating-tag tag-three parallax-layer" data-depth="0.42">Visual Systems</div>
+                </div>
+            </div>
+            <a class="scroll-hint" href="#about"><span>Scroll to travel</span><i></i></a>
+        </section>
+
+        <section class="panel about-panel" id="about" data-section="02" aria-labelledby="about-title">
+            <div class="panel-inner about-layout">
+                <div class="section-heading reveal">
+                    <span class="chapter">Chapter 02 · Passenger Manifest</span>
+                    <h2 id="about-title">Identity, with the signal kept clear.</h2>
+                    <p>I am interested in the point where rigorous analysis, useful software, and memorable visual communication meet.</p>
+                </div>
+
+                <div class="passport-card reveal reveal-delay">
+                    <div class="passport-top">
+                        <span>Republic of Curiosity</span>
+                        <i>DS-013</i>
+                    </div>
+                    <div class="passport-main">
+                        <div class="passport-portrait">
+                            <div class="portrait-rings"></div>
+                            <span>SA</span>
+                            <small>DATA / CREATIVE</small>
+                        </div>
+                        <dl class="passport-data">
+                            <div><dt>Full name</dt><dd>{{ profile.name }}</dd></div>
+                            <div><dt>Current base</dt><dd>{{ profile.location }}</dd></div>
+                            <div><dt>Education</dt><dd>{{ profile.education }}</dd></div>
+                            <div><dt>Study period</dt><dd>{{ profile.education_period }}</dd></div>
+                            <div><dt>Current role</dt><dd>{{ profile.current_role }}</dd></div>
+                            <div><dt>Availability</dt><dd>{{ profile.availability }}</dd></div>
+                        </dl>
+                    </div>
+                    <div class="passport-footer">
+                        <span>Machine Learning</span><span>NLP</span><span>Data Products</span><span>UI/UX</span>
+                    </div>
+                </div>
+
+                <div class="about-stats reveal">
+                    {% for stat in stats %}
+                    <article class="stat-card">
+                        <strong>{{ stat.value }}</strong>
+                        <span>{{ stat.label }}</span>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="panel skills-panel" id="skills" data-section="03" aria-labelledby="skills-title">
+            <div class="panel-inner skills-layout">
+                <div class="section-heading reveal">
+                    <span class="chapter">Chapter 03 · Engine Room</span>
+                    <h2 id="skills-title">A hybrid toolkit for finding, building, and explaining.</h2>
+                    <p>My strength is not a single algorithm. It is connecting research, engineering, product thinking, and visual clarity into one coherent outcome.</p>
+                </div>
+
+                <div class="skill-orbit reveal reveal-delay" aria-hidden="true">
+                    <div class="orbit-core"><span>DATA</span><b>×</b><span>DESIGN</span></div>
+                    <div class="orbit-line orbit-line-a"></div>
+                    <div class="orbit-line orbit-line-b"></div>
+                    <span class="orbit-node node-a">Python</span>
+                    <span class="orbit-node node-b">Django</span>
+                    <span class="orbit-node node-c">PyTorch</span>
+                    <span class="orbit-node node-d">NLP</span>
+                    <span class="orbit-node node-e">UI/UX</span>
+                </div>
+
+                <div class="skill-grid">
+                    {% for group in skill_groups %}
+                    <article class="skill-card reveal">
+                        <div class="skill-card-head"><span>{{ group.mark }}</span><h3>{{ group.name }}</h3></div>
+                        <div class="skill-list">
+                            {% for skill in group.skills %}<span>{{ skill }}</span>{% endfor %}
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="panel projects-panel" id="projects" data-section="04" aria-labelledby="projects-title">
+            <div class="panel-inner projects-layout">
+                <div class="section-heading section-heading-row reveal">
+                    <div>
+                        <span class="chapter">Chapter 04 · Stations of Impact</span>
+                        <h2 id="projects-title">Selected work, curated for depth.</h2>
+                    </div>
+                    <div class="project-controls" aria-label="Project carousel controls">
+                        <button type="button" data-project-prev aria-label="Previous projects">←</button>
+                        <button type="button" data-project-next aria-label="Next projects">→</button>
+                    </div>
+                </div>
+
+                <div class="project-track reveal reveal-delay" data-project-track tabindex="0" aria-label="Selected project cards">
+                    {% for project in projects %}
+                    <article class="project-card accent-{{ project.accent }}">
+                        <div class="project-visual">
+                            <img src="{% static project.image %}" alt="Visual preview for {{ project.title }}">
+                            <span class="project-number">{{ project.number }}</span>
+                            <span class="project-metric">{{ project.metric }}</span>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-eyebrow">{{ project.eyebrow }}</span>
+                            <h3>{{ project.title }}</h3>
+                            <p>{{ project.summary }}</p>
+                            <div class="project-stack">
+                                {% for item in project.stack|slice:':3' %}<span>{{ item }}</span>{% endfor %}
+                            </div>
+                            <div class="project-actions">
+                                <button type="button" class="project-detail-btn"
+                                    data-project-open
+                                    data-title="{{ project.title }}"
+                                    data-eyebrow="{{ project.eyebrow }}"
+                                    data-detail="{{ project.detail }}"
+                                    data-impact="{{ project.impact }}"
+                                    data-metric="{{ project.metric }}"
+                                    data-url="{{ project.url }}">Case details</button>
+                                <a href="{{ project.url }}" target="_blank" rel="noreferrer" aria-label="Open {{ project.title }} on GitHub">GitHub ↗</a>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+                <p class="track-hint">Drag or use arrow keys to explore all six stations.</p>
+            </div>
+        </section>
+
+        <section class="panel journey-panel" id="journey" data-section="05" aria-labelledby="journey-title">
+            <div class="panel-inner journey-layout">
+                <div class="section-heading reveal">
+                    <span class="chapter">Chapter 05 · Route History</span>
+                    <h2 id="journey-title">A path shaped by data and visual leadership.</h2>
+                    <p>Technical depth and creative direction have developed side by side—from student organizations to an applied cybersecurity internship.</p>
+                </div>
+
+                <div class="journey-map reveal reveal-delay">
+                    <div class="journey-line" aria-hidden="true"><i class="journey-train"></i></div>
+                    {% for item in journey %}
+                    <article class="journey-stop stop-{{ forloop.counter }}">
+                        <span class="stop-dot"></span>
+                        <div class="journey-time">{{ item.period }}</div>
+                        <div class="journey-content">
+                            <span class="journey-type">{{ item.type }}</span>
+                            <h3>{{ item.role }}</h3>
+                            <strong>{{ item.org }}</strong>
+                            <p>{{ item.description }}</p>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="panel achievements-panel" id="achievements" data-section="06" aria-labelledby="achievements-title">
+            <div class="panel-inner achievements-layout">
+                <div class="section-heading reveal">
+                    <span class="chapter">Chapter 06 · Signal Beacons</span>
+                    <h2 id="achievements-title">Evidence of range, resilience, and iteration.</h2>
+                    <p>Competition results are useful milestones, but the real signal is the ability to improve a system through careful diagnosis and repeated experiments.</p>
+                </div>
+                <div class="achievement-constellation reveal reveal-delay">
+                    {% for achievement in achievements %}
+                    <article class="achievement-card achievement-{{ forloop.counter }}">
+                        <span class="achievement-icon">{{ achievement.icon }}</span>
+                        <small>{{ achievement.meta }}</small>
+                        <h3>{{ achievement.title }}</h3>
+                        <p>{{ achievement.description }}</p>
+                    </article>
+                    {% endfor %}
+                    <div class="constellation-lines" aria-hidden="true">
+                        <i></i><i></i><i></i>
+                    </div>
+                </div>
+                <blockquote class="portfolio-quote reveal">
+                    <span>“</span>
+                    <p>The best portfolio is not a gallery of outputs. It is a record of how you think, test, and make decisions.</p>
+                </blockquote>
+            </div>
+        </section>
+
+        <section class="panel contact-panel" id="contact" data-section="07" aria-labelledby="contact-title">
+            <div class="panel-inner contact-layout">
+                <div class="contact-copy reveal">
+                    <span class="chapter">Final Stop · Let’s Build</span>
+                    <h2 id="contact-title">Have a meaningful problem hidden inside complex data?</h2>
+                    <p>I am open to internships, research collaboration, data-product work, and conversations around machine learning systems with real users.</p>
+                    <div class="contact-links">
+                        <a href="{{ profile.linkedin }}" target="_blank" rel="noreferrer"><span>LinkedIn</span><b>↗</b></a>
+                        <a href="{{ profile.github }}" target="_blank" rel="noreferrer"><span>GitHub</span><b>↗</b></a>
+                        <a href="{{ profile.kaggle }}" target="_blank" rel="noreferrer"><span>Kaggle</span><b>↗</b></a>
+                    </div>
+                </div>
+
+                <div class="contact-card reveal reveal-delay">
+                    {% if messages %}
+                        {% for message in messages %}<div class="form-success" role="status">{{ message }}</div>{% endfor %}
+                    {% endif %}
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        {{ form.website }}
+                        <div class="form-row">
+                            <label for="{{ form.name.id_for_label }}">Name</label>
+                            {{ form.name }}
+                            {% for error in form.name.errors %}<span class="field-error">{{ error }}</span>{% endfor %}
+                        </div>
+                        <div class="form-row">
+                            <label for="{{ form.email.id_for_label }}">Email</label>
+                            {{ form.email }}
+                            {% for error in form.email.errors %}<span class="field-error">{{ error }}</span>{% endfor %}
+                        </div>
+                        <div class="form-row">
+                            <label for="{{ form.company.id_for_label }}">Company / team</label>
+                            {{ form.company }}
+                            {% for error in form.company.errors %}<span class="field-error">{{ error }}</span>{% endfor %}
+                        </div>
+                        <div class="form-row">
+                            <label for="{{ form.message.id_for_label }}">Message</label>
+                            {{ form.message }}
+                            {% for error in form.message.errors %}<span class="field-error">{{ error }}</span>{% endfor %}
+                        </div>
+                        <button class="btn btn-primary form-submit" type="submit">Send message <span>→</span></button>
+                    </form>
+                    <small class="privacy-note">Messages are stored in this Django site’s database and visible only to the site administrator.</small>
+                </div>
+            </div>
+            <footer class="site-footer">
+                <span>Designed and built with Django · 2026</span>
+                <a href="#home">Return to the sky line ↑</a>
+            </footer>
+        </section>
+    </main>
+
+    <dialog class="project-modal" id="projectModal" aria-labelledby="modalTitle">
+        <button type="button" class="modal-close" data-modal-close aria-label="Close project details">×</button>
+        <span class="modal-eyebrow" id="modalEyebrow"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDetail"></p>
+        <div class="modal-impact"><small>Design decision</small><strong id="modalImpact"></strong></div>
+        <div class="modal-footer">
+            <span id="modalMetric"></span>
+            <a id="modalLink" href="#" target="_blank" rel="noreferrer">View repository ↗</a>
+        </div>
+    </dialog>
+
+    <script src="{% static 'portfolio/js/main.js' %}" defer></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DJANGO_DEBUG: "False"
+      DJANGO_ALLOWED_HOSTS: "localhost,127.0.0.1"
+      DJANGO_SECRET_KEY: "change-this-before-deployment"
+    command: >
+      sh -c "python manage.py migrate &&
+             gunicorn portfolio_site.wsgi:application --bind 0.0.0.0:8000 --workers 2"

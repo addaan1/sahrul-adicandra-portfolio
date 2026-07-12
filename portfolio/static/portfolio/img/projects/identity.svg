@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#173b52"/><stop offset="1" stop-color="#08131f"/></linearGradient><radialGradient id="r"><stop stop-color="#72e5e0" stop-opacity=".26"/><stop offset="1" stop-color="#72e5e0" stop-opacity="0"/></radialGradient><filter id="s"><feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#020812" flood-opacity=".45"/></filter></defs>
+<rect width="1200" height="700" fill="url(#g)"/><circle cx="640" cy="340" r="330" fill="url(#r)"/>
+<g opacity=".12" stroke="#fff"><path d="M0 100h1200M0 200h1200M0 300h1200M0 400h1200M0 500h1200M0 600h1200M100 0v700M200 0v700M300 0v700M400 0v700M500 0v700M600 0v700M700 0v700M800 0v700M900 0v700M1000 0v700M1100 0v700"/></g>
+<g filter="url(#s)"><path d="M600 155 760 220v120c0 125-68 218-160 260-92-42-160-135-160-260V220z" fill="none" stroke="#72e5e0" stroke-width="18"/><path d="m520 370 55 55 110-125" fill="none" stroke="#eafffb" stroke-width="20" stroke-linecap="round"/></g>
+<text x="72" y="92" fill="#72e5e0" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="5">IDENTITY / RISK</text>
+<text x="72" y="632" fill="#eaf3f7" font-family="Arial, sans-serif" font-size="22" font-weight="700">SAHRUL / SELECTED WORK</text>
+<circle cx="1085" cy="88" r="28" fill="none" stroke="#72e5e0" stroke-width="5"/><path d="M1072 88h26m-13-13v26" stroke="#72e5e0" stroke-width="4"/>
+</svg>
