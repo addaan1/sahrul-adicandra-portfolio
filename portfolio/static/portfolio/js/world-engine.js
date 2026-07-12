@@ -384,15 +384,15 @@
     const crystalObjects=[];
 
     // Floating rail system
-    trackObjects.push(mesh(geometries.torus,[4.8,1.1,-3.8],[8.7,.6,8.7],[0,0,0],"#3f737d",{glow:.14}));
-    trackObjects.push(mesh(geometries.torusThin,[4.8,1.5,-3.8],[8.95,.7,8.95],[0,0,0],"#9cfff4",{glow:.65}));
-    trackObjects.push(mesh(geometries.torusThin,[4.8,.72,-3.8],[8.45,.7,8.45],[0,0,0],"#254958",{glow:.05}));
+    trackObjects.push(mesh(geometries.torus,[4.8,1.1,-3.8],[8.7,.6,8.7],[0,0,0],"#6c6047",{glow:.12}));
+    trackObjects.push(mesh(geometries.torusThin,[4.8,1.5,-3.8],[8.95,.7,8.95],[0,0,0],"#f3c66f",{glow:.72}));
+    trackObjects.push(mesh(geometries.torusThin,[4.8,.72,-3.8],[8.45,.7,8.45],[0,0,0],"#4fbfc8",{glow:.28}));
     staticObjects.push(...trackObjects);
 
     // Rail sleepers / energy pylons
     for(let k=0;k<(mobile?18:30);k++){
         const a=k/(mobile?18:30)*Math.PI*2,r=8.7,x=4.8+Math.cos(a)*r,z=-3.8+Math.sin(a)*r;
-        staticObjects.push(mesh(geometries.box,[x,1.05,z],[.12,.08,.55],[0,-a,0],k%3===0?"#6de5dd":"#23434f",{glow:k%3===0?.4:.04}));
+        staticObjects.push(mesh(geometries.box,[x,1.05,z],[.12,.08,.55],[0,-a,0],k%3===0?"#e7ba63":"#294957",{glow:k%3===0?.42:.05}));
     }
 
     // Floating islands
@@ -409,7 +409,7 @@
         if(idx<6){
             for(let t=0;t<3;t++){
                 const angle=t/3*Math.PI*2+idx, cr=.9+t*.34;
-                const crystal=mesh(geometries.crystal,[x+Math.cos(angle)*r*.45,y+h*.98+cr*.22,z+Math.sin(angle)*r*.45],[.25,cr,.25],[0,angle,0],idx%2?"#8b9dff":"#72f1df",{glow:.85,bob:.18,phase:idx+t});
+                const crystal=mesh(geometries.crystal,[x+Math.cos(angle)*r*.45,y+h*.98+cr*.22,z+Math.sin(angle)*r*.45],[.25,cr,.25],[0,angle,0],idx%2?"#f4c76e":"#72e8df",{glow:.82,bob:.18,phase:idx+t});
                 crystalObjects.push(crystal);staticObjects.push(crystal);
             }
         }
@@ -432,8 +432,8 @@
     }
 
     // Distant moon / celestial body
-    transparentObjects.push(mesh(geometries.sphere,[17,15,-26],[5.5,5.5,5.5],[0,0,0],"#c9e9ed",{alpha:.22,transparent:true,glow:.8}));
-    transparentObjects.push(mesh(geometries.sphere,[-22,10,-35],[8,8,8],[0,0,0],"#8b79cf",{alpha:.08,transparent:true,glow:.5}));
+    transparentObjects.push(mesh(geometries.sphere,[18,16,-29],[5.8,5.8,5.8],[0,0,0],"#ffe0a0",{alpha:.24,transparent:true,glow:.9}));
+    transparentObjects.push(mesh(geometries.sphere,[-24,12,-38],[8,8,8],[0,0,0],"#557eb9",{alpha:.07,transparent:true,glow:.45}));
 
     // Particle field
     const particleCount = mobile ? 180 : 420;
@@ -451,23 +451,23 @@
     gl.bufferData(gl.ARRAY_BUFFER,particleData,gl.STATIC_DRAW);
 
     const palettes = [
-        {fog:"#0c2233",accent:"#7cf4e8",light:[-.4,.86,.25]},
-        {fog:"#172040",accent:"#b09aff",light:[-.55,.72,.4]},
-        {fog:"#2a2638",accent:"#ffd887",light:[-.35,.9,.18]},
-        {fog:"#301f31",accent:"#ff9b88",light:[-.65,.65,.35]},
-        {fog:"#102f35",accent:"#79e5bd",light:[-.4,.82,.3]},
-        {fog:"#172349",accent:"#92adff",light:[-.55,.72,.42]},
-        {fog:"#273044",accent:"#ffe0a8",light:[-.35,.92,.2]},
+        {fog:"#0a2235",accent:"#7cf1e7",light:[-.38,.90,.22]},
+        {fog:"#142b43",accent:"#f0c66f",light:[-.46,.86,.28]},
+        {fog:"#263149",accent:"#ffd98b",light:[-.32,.92,.18]},
+        {fog:"#172b43",accent:"#79e8df",light:[-.52,.82,.32]},
+        {fog:"#173847",accent:"#efbd62",light:[-.36,.88,.24]},
+        {fog:"#1b2d4d",accent:"#8ab8ff",light:[-.48,.80,.38]},
+        {fog:"#324052",accent:"#ffe2a2",light:[-.30,.94,.16]},
     ];
 
     const cameraScenes = [
-        {eye:[-5.5,8.8,18],target:[4,1,-4],fov:48},
-        {eye:[14,7.2,14],target:[2,1,-5],fov:45},
-        {eye:[-10,6.5,8],target:[2,1,-5],fov:47},
-        {eye:[3.5,13,19],target:[5,1,-4],fov:51},
-        {eye:[16,5.5,5],target:[3,0,-4],fov:47},
-        {eye:[-8,12,-1],target:[4,2,-8],fov:44},
-        {eye:[4,8,22],target:[5,1,-4],fov:49},
+        {eye:[-7.0,9.4,20.5],target:[5.0,1.2,-4.2],fov:47},
+        {eye:[15.5,9.0,18.5],target:[4.2,1.0,-4.5],fov:46},
+        {eye:[-11.5,8.5,14.0],target:[4.0,1.0,-4.5],fov:47},
+        {eye:[5.0,15.0,23.5],target:[5.0,1.0,-4.0],fov:50},
+        {eye:[18.0,8.0,11.0],target:[4.0,.8,-4.0],fov:47},
+        {eye:[-10.0,14.0,6.0],target:[4.5,1.8,-7.0],fov:45},
+        {eye:[6.0,9.5,24.5],target:[5.0,1.1,-4.0],fov:48},
     ];
 
     let camera = {...cameraScenes[0],eye:[...cameraScenes[0].eye],target:[...cameraScenes[0].target]};
@@ -476,11 +476,11 @@
     let lightDir = [...palettes[0].light];
 
     const trainParts = [];
-    const trainColor="#d8f3ef";
-    const trainAccent="#6ff1e4";
+    const trainColor="#eef7f3";
+    const trainAccent="#f1c66e";
     for(let c=0;c<3;c++){
         trainParts.push({offset:c*1.35,body:mesh(geometries.box,[0,0,0],[.82,.52,1.1],[0,0,0],trainColor,{glow:.12})});
-        trainParts.push({offset:c*1.35,body:mesh(geometries.box,[0,0,0],[.66,.34,1.13],[0,0,0],c===0?trainAccent:"#315a6a",{glow:c===0?.65:.1}) ,upper:true});
+        trainParts.push({offset:c*1.35,body:mesh(geometries.box,[0,0,0],[.66,.34,1.13],[0,0,0],c===0?trainAccent:"#397b83",{glow:c===0?.65:.1}) ,upper:true});
     }
 
     const bindGeometry = (geometry) => {
@@ -535,21 +535,24 @@
         if(paused){requestAnimationFrame(render);return;}
         const dt=Math.min((now-lastTime)/1000,.05);lastTime=now;elapsed+=dt;
         resize();
-        pointerX=lerp(pointerX,pointerTargetX,.045);pointerY=lerp(pointerY,pointerTargetY,.045);
-        sceneIndex=lerp(sceneIndex,targetScene,.035);
+        const motionBlend = 1 - Math.exp(-dt * 3.8);
+        const cameraBlend = 1 - Math.exp(-dt * 3.2);
+        pointerX=lerp(pointerX,pointerTargetX,motionBlend);pointerY=lerp(pointerY,pointerTargetY,motionBlend);
+        sceneIndex=lerp(sceneIndex,targetScene,1 - Math.exp(-dt * 2.55));
         const low=Math.floor(sceneIndex),high=Math.min(6,Math.ceil(sceneIndex)),blend=sceneIndex-low;
         const a=cameraScenes[low],b=cameraScenes[high];
         const desiredEye=lerpVec(a.eye,b.eye,blend);
         const desiredTarget=lerpVec(a.target,b.target,blend);
         desiredEye[0]+=pointerX*1.25;desiredEye[1]+=-pointerY*.65;
         desiredTarget[0]+=pointerX*.4;desiredTarget[1]+=-pointerY*.28;
-        camera.eye=lerpVec(camera.eye,desiredEye,.045);
-        camera.target=lerpVec(camera.target,desiredTarget,.045);
-        camera.fov=lerp(camera.fov,lerp(a.fov,b.fov,blend),.04);
+        camera.eye=lerpVec(camera.eye,desiredEye,cameraBlend);
+        camera.target=lerpVec(camera.target,desiredTarget,cameraBlend);
+        camera.fov=lerp(camera.fov,lerp(a.fov,b.fov,blend),1 - Math.exp(-dt * 3.0));
         const pa=palettes[low],pb=palettes[high];
-        fogColor=lerpVec(fogColor,lerpVec(hex(pa.fog),hex(pb.fog),blend),.04);
-        accentColor=lerpVec(accentColor,lerpVec(hex(pa.accent),hex(pb.accent),blend),.04);
-        lightDir=lerpVec(lightDir,lerpVec(pa.light,pb.light,blend),.04);
+        const colorBlend = 1 - Math.exp(-dt * 2.8);
+        fogColor=lerpVec(fogColor,lerpVec(hex(pa.fog),hex(pb.fog),blend),colorBlend);
+        accentColor=lerpVec(accentColor,lerpVec(hex(pa.accent),hex(pb.accent),blend),colorBlend);
+        lightDir=lerpVec(lightDir,lerpVec(pa.light,pb.light,blend),colorBlend);
 
         gl.clearColor(0,0,0,0);
         gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
@@ -573,6 +576,7 @@
         drawTrain(viewProjection,elapsed);
 
         gl.disable(gl.CULL_FACE);
+        gl.disable(gl.DEPTH_TEST);
         gl.enable(gl.BLEND);
         gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
         gl.depthMask(false);
@@ -594,6 +598,7 @@
         gl.drawArrays(gl.POINTS,0,particleCount);
         gl.depthMask(true);
         gl.disable(gl.BLEND);
+        gl.enable(gl.DEPTH_TEST);
 
         requestAnimationFrame(render);
     };

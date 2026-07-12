@@ -31,6 +31,10 @@
 
     <div class="world-shell" aria-hidden="true">
         <div class="sky-gradient"></div>
+        <div class="dawn-horizon"></div>
+        <div class="dawn-sun"><i></i><span></span></div>
+        <div class="cloud-bands cloud-bands-far"></div>
+        <div class="cloud-bands cloud-bands-near"></div>
         <canvas id="worldCanvas"></canvas>
         <div class="world-vignette"></div>
         <div class="world-grain"></div>
@@ -63,6 +67,9 @@
             </button>
             <button class="icon-control magnetic" type="button" id="soundToggle" aria-label="Enable ambient sound" aria-pressed="false">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.5.2a4 4 0 0 1 0 5.6M19 6.7a7.5 7.5 0 0 1 0 10.6"/></svg>
+            </button>
+            <button class="icon-control magnetic" type="button" id="focusToggle" aria-label="Enable reading focus" aria-pressed="false" title="Reading focus">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12s3.4-6 9-6 9 6 9 6-3.4 6-9 6-9-6-9-6Z"/><circle cx="12" cy="12" r="2.7"/></svg>
             </button>
             <button class="icon-control magnetic" type="button" id="cinematicToggle" aria-label="Toggle cinematic mode" aria-pressed="false">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v11H3zM7 7l2-3h6l2 3M8 12h8"/></svg>
@@ -114,6 +121,9 @@
                         <a href="#projects" class="btn btn-primary magnetic"><span>Enter mission atlas</span><b>↓</b></a>
                         <a href="{{ profile.linkedin }}" class="btn btn-ghost magnetic" target="_blank" rel="noreferrer"><span>LinkedIn profile</span><b>↗</b></a>
                     </div>
+                    <div class="portfolio-signal" aria-label="Portfolio value proposition">
+                        <span>Research grounded</span><span>Product minded</span><span>Built for real users</span>
+                    </div>
                     <div class="hero-facts">
                         <div><small>Current quest</small><strong>{{ profile.current_role }}</strong></div>
                         <div><small>Home station</small><strong>{{ profile.location }}</strong></div>
@@ -127,7 +137,11 @@
                     <div class="hero-card glass-card tilt-card">
                         <div class="hero-card-top"><span>TRAVELER ID</span><b>DS–013</b></div>
                         <div class="hero-card-portrait">
-                            <div class="portrait-core"><span>SA</span><i></i></div>
+                            <figure class="portrait-core portrait-photo">
+                                <img src="{% static 'portfolio/img/profile/sahrul-avatar.webp' %}" alt="Portrait of Sahrul Adicandra Effendy">
+                                <span class="portrait-photo-glow"></span>
+                                <i></i>
+                            </figure>
                             <div class="portrait-scanner"></div>
                         </div>
                         <strong>{{ profile.name }}</strong>
@@ -164,7 +178,11 @@
                         <b>VERIFIED</b>
                     </div>
                     <div class="console-grid">
-                        <div class="console-avatar"><span>SA</span><i></i><small>DATA / CREATIVE</small></div>
+                        <div class="console-avatar console-photo">
+                            <img src="{% static 'portfolio/img/profile/sahrul-portrait.webp' %}" alt="Sahrul Adicandra Effendy">
+                            <span class="console-photo-shade"></span>
+                            <small>DATA / CREATIVE</small>
+                        </div>
                         <dl>
                             <div><dt>Full identity</dt><dd>{{ profile.name }}</dd></div>
                             <div><dt>Base</dt><dd>{{ profile.location }}</dd></div>
@@ -387,6 +405,7 @@
         <div class="command-footer"><span><kbd>↑</kbd><kbd>↓</kbd> Navigate</span><span><kbd>Enter</kbd> Select</span></div>
     </dialog>
 
+    <div class="reading-toast" id="readingToast" role="status" aria-live="polite">Reading focus enabled</div>
     <div class="mobile-journey-bar" aria-hidden="true"><i id="mobileProgress"></i></div>
     <script src="{% static 'portfolio/js/world-engine.js' %}" defer></script>
     <script src="{% static 'portfolio/js/main.js' %}" defer></script>

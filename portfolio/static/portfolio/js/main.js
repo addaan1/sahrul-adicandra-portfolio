@@ -21,6 +21,7 @@
     let travelling = false;
     let wheelAccumulator = 0;
     let wheelResetTimer = 0;
+    let wheelLockUntil = 0;
     let scrollAnimation = 0;
 
     if (totalLabel) totalLabel.textContent = String(panels.length).padStart(2, "0");
@@ -47,6 +48,9 @@
         if (railProgress) railProgress.style.height = `${progress * 100}%`;
         if (compassNeedle) compassNeedle.style.transform = `translateY(-3px) rotate(${20 + activeIndex * 43}deg)`;
         window.dispatchEvent(new CustomEvent("portfolio:scenechange", { detail: { index: activeIndex } }));
+        if (source === "navigation" && history.replaceState) {
+            history.replaceState(null, "", `#${panels[activeIndex].id}`);
+        }
     };
 
     const animateStageTo = (index) => {
@@ -101,19 +105,23 @@
     if (stage && desktop() && !reduceMotion) {
         stage.addEventListener("wheel", (event) => {
             if (body.classList.contains("modal-open") || event.target.closest("dialog, input, textarea, [data-project-track], .route-map")) return;
-            if (travelling) {
+            if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
+            const now = performance.now();
+            if (travelling || now < wheelLockUntil) {
                 event.preventDefault();
                 return;
             }
-            wheelAccumulator += event.deltaY;
+            const normalized = event.deltaMode === 1 ? event.deltaY * 18 : event.deltaY;
+            wheelAccumulator += clamp(normalized, -120, 120);
             window.clearTimeout(wheelResetTimer);
-            wheelResetTimer = window.setTimeout(() => { wheelAccumulator = 0; }, 180);
-            if (Math.abs(wheelAccumulator) < 48) return;
+            wheelResetTimer = window.setTimeout(() => { wheelAccumulator = 0; }, 220);
+            if (Math.abs(wheelAccumulator) < 72) return;
             const direction = wheelAccumulator > 0 ? 1 : -1;
             const next = activeIndex + direction;
             wheelAccumulator = 0;
             if (next < 0 || next >= panels.length) return;
             event.preventDefault();
+            wheelLockUntil = now + 980;
             animateStageTo(next);
         }, { passive: false });
     }
@@ -221,17 +229,19 @@
         const finalText = scrambleTarget.dataset.scramble;
         const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789△◇✦";
         let iteration = 0;
+        const finishScramble = () => {
+            scrambleTarget.textContent = finalText;
+            window.clearInterval(scramble);
+        };
         const scramble = window.setInterval(() => {
             scrambleTarget.textContent = finalText.split("").map((letter, index) => {
                 if (letter === " ") return " ";
                 return index < iteration ? finalText[index] : chars[Math.floor(Math.random() * chars.length)];
             }).join("");
-            iteration += .42;
-            if (iteration >= finalText.length) {
-                scrambleTarget.textContent = finalText;
-                window.clearInterval(scramble);
-            }
-        }, 42);
+            iteration += .78;
+            if (iteration >= finalText.length) finishScramble();
+        }, 36);
+        window.setTimeout(finishScramble, 1100);
     }
 
     // Project mission carousel.
@@ -371,6 +381,27 @@
         if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeCommand();
     });
     commandPalette?.addEventListener("close", () => body.classList.remove("modal-open"));
+
+    // Reading focus: dims the world while preserving the portfolio layout.
+    const focusToggle = document.getElementById("focusToggle");
+    const readingToast = document.getElementById("readingToast");
+    let toastTimer = 0;
+    const applyFocusMode = (enabled, announce = false) => {
+        body.classList.toggle("focus-mode", enabled);
+        focusToggle?.setAttribute("aria-pressed", String(enabled));
+        focusToggle?.setAttribute("aria-label", enabled ? "Disable reading focus" : "Enable reading focus");
+        try { localStorage.setItem("portfolio-reading-focus", enabled ? "1" : "0"); } catch (_) {}
+        if (announce && readingToast) {
+            readingToast.textContent = enabled ? "Reading focus enabled" : "Cinematic balance restored";
+            readingToast.classList.add("is-visible");
+            window.clearTimeout(toastTimer);
+            toastTimer = window.setTimeout(() => readingToast.classList.remove("is-visible"), 1800);
+        }
+    };
+    let savedFocus = false;
+    try { savedFocus = localStorage.getItem("portfolio-reading-focus") === "1"; } catch (_) {}
+    applyFocusMode(savedFocus);
+    focusToggle?.addEventListener("click", () => applyFocusMode(!body.classList.contains("focus-mode"), true));
 
     // Cinematic UI mode.
     const cinematicToggle = document.getElementById("cinematicToggle");
