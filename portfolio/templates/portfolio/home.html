@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#071527">
+    <meta name="theme-color" content="#071629">
     <meta name="description" content="Portfolio of Sahrul Adicandra Effendy — data science, machine learning, NLP, analytics, and data-product engineering.">
     <meta property="og:title" content="Sahrul Adicandra Effendy — Data Science Portfolio">
     <meta property="og:description" content="Selected projects, experience, capabilities, and professional contact information.">
@@ -13,7 +13,7 @@
     <link rel="icon" href="{% static 'portfolio/img/favicon.svg' %}" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
     <script>document.documentElement.classList.remove('no-js');</script>
 </head>
@@ -21,50 +21,115 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <div class="preloader" id="preloader" aria-live="polite">
-        <div class="loader-mark" aria-hidden="true"><span>SA</span><i></i></div>
+        <div class="loader-monogram">SA</div>
         <div class="loader-copy">
             <small>Preparing portfolio</small>
-            <strong>Loading interactive environment <b id="loaderPercent">0%</b></strong>
-            <div class="loader-line"><i id="loaderBar"></i></div>
+            <strong>Building the visual narrative <b id="loaderPercent">0%</b></strong>
+            <div class="loader-track"><i id="loaderBar"></i></div>
         </div>
     </div>
 
-    <div class="world-shell" aria-hidden="true">
-        <div class="sky-gradient"></div>
-        <div class="dawn-horizon"></div>
-        <div class="dawn-sun"><i></i><span></span></div>
-        <div class="cloud-bands cloud-bands-far"></div>
-        <div class="cloud-bands cloud-bands-near"></div>
-        <canvas id="worldCanvas"></canvas>
-        <div class="world-vignette"></div>
-        <div class="world-grain"></div>
-        <div class="world-rays"></div>
+    <div class="visual-stage" aria-hidden="true">
+        <div class="stage-base"></div>
+        <div class="stage-noise"></div>
+        <div class="stage-vignette"></div>
+
+        <div class="scene-art scene-hero">
+            <div class="hero-sun"></div>
+            <div class="hero-horizon"></div>
+            <div class="hero-ribbon ribbon-a"></div>
+            <div class="hero-ribbon ribbon-b"></div>
+            <div class="hero-ribbon ribbon-c"></div>
+            <svg class="hero-chart" viewBox="0 0 900 420" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="heroLine" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="#7dd3fc" stop-opacity="0"/>
+                        <stop offset=".42" stop-color="#7dd3fc"/>
+                        <stop offset="1" stop-color="#f7c66a"/>
+                    </linearGradient>
+                </defs>
+                <path class="chart-path" d="M20 350 C120 345 150 290 240 306 S390 230 470 248 S590 130 690 168 S785 80 880 42"/>
+                <g class="chart-points">
+                    <circle cx="240" cy="306" r="6"/><circle cx="470" cy="248" r="6"/><circle cx="690" cy="168" r="6"/><circle cx="880" cy="42" r="7"/>
+                </g>
+            </svg>
+            <div class="hero-data data-a">01</div><div class="hero-data data-b">ML</div><div class="hero-data data-c">NLP</div>
+        </div>
+
+        <div class="scene-art scene-about">
+            <div class="about-orbit orbit-a"></div>
+            <div class="about-orbit orbit-b"></div>
+            <div class="about-portrait-shadow"></div>
+            <div class="about-column column-a"></div><div class="about-column column-b"></div><div class="about-column column-c"></div>
+            <svg class="about-path" viewBox="0 0 900 900">
+                <path d="M118 705 C330 618 310 322 520 286 C680 258 690 90 842 70"/>
+                <circle cx="118" cy="705" r="7"/><circle cx="520" cy="286" r="7"/><circle cx="842" cy="70" r="7"/>
+            </svg>
+        </div>
+
+        <div class="scene-art scene-skills">
+            <div class="skills-grid"></div>
+            <div class="skills-beam beam-a"></div><div class="skills-beam beam-b"></div><div class="skills-beam beam-c"></div>
+            <svg class="skills-network" viewBox="0 0 1000 760">
+                <g class="network-lines">
+                    <path d="M140 560 L310 420 L486 520 L650 340 L840 440"/>
+                    <path d="M310 420 L380 205 L650 340 L760 150"/>
+                    <path d="M486 520 L575 650 L840 440"/>
+                </g>
+                <g class="network-nodes">
+                    <circle cx="140" cy="560" r="11"/><circle cx="310" cy="420" r="15"/><circle cx="486" cy="520" r="11"/>
+                    <circle cx="650" cy="340" r="16"/><circle cx="840" cy="440" r="11"/><circle cx="380" cy="205" r="9"/>
+                    <circle cx="760" cy="150" r="12"/><circle cx="575" cy="650" r="8"/>
+                </g>
+            </svg>
+        </div>
+
+        <div class="scene-art scene-projects">
+            <div class="project-window window-a"></div><div class="project-window window-b"></div><div class="project-window window-c"></div>
+            <div class="project-window window-d"></div><div class="project-window window-e"></div>
+            <div class="project-crosshair"><i></i><b></b></div>
+            <div class="project-glow"></div>
+        </div>
+
+        <div class="scene-art scene-journey">
+            <svg class="journey-line" viewBox="0 0 1100 800" preserveAspectRatio="none">
+                <path d="M60 680 C190 610 185 470 330 438 C470 408 450 270 590 250 C735 230 760 112 1040 96"/>
+                <circle cx="60" cy="680" r="10"/><circle cx="330" cy="438" r="10"/><circle cx="590" cy="250" r="10"/><circle cx="1040" cy="96" r="10"/>
+            </svg>
+            <div class="journey-year year-a">2023</div><div class="journey-year year-b">2024</div><div class="journey-year year-c">2026</div>
+            <div class="journey-sweep"></div>
+        </div>
+
+        <div class="scene-art scene-achievements">
+            <div class="award-ring award-ring-a"></div><div class="award-ring award-ring-b"></div><div class="award-ring award-ring-c"></div>
+            <div class="award-star"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="award-number">08%</div>
+            <div class="award-spark spark-a"></div><div class="award-spark spark-b"></div><div class="award-spark spark-c"></div>
+        </div>
+
+        <div class="scene-art scene-contact">
+            <div class="contact-sun"></div>
+            <div class="contact-arc arc-a"></div><div class="contact-arc arc-b"></div><div class="contact-arc arc-c"></div>
+            <svg class="contact-route" viewBox="0 0 1000 500" preserveAspectRatio="none">
+                <path d="M30 430 C210 390 270 205 465 232 S720 90 970 55"/>
+            </svg>
+            <div class="contact-pulse"></div>
+        </div>
     </div>
 
-    <div class="transition-iris" aria-hidden="true"><i></i></div>
-    <div class="cursor-orb" aria-hidden="true"><i></i></div>
+    <div class="page-wipe" aria-hidden="true"><i></i></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
 
     <header class="site-header">
         <a class="brand magnetic" href="#home" aria-label="Back to overview">
-            <span class="brand-emblem"><b>SA</b><i></i></span>
-            <span class="brand-copy">
-                <strong>Sahrul Adicandra</strong>
-                <small>Data Science Portfolio</small>
-            </span>
+            <span class="brand-emblem">SA</span>
+            <span class="brand-copy"><strong>Sahrul Adicandra</strong><small>Data Science Portfolio</small></span>
         </a>
-
         <nav class="desktop-nav" aria-label="Portfolio sections">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#journey">Experience</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Experience</a><a href="#contact">Contact</a>
         </nav>
-
         <div class="header-actions">
-            <button class="icon-control magnetic" type="button" id="commandButton" aria-label="Open quick navigation" title="Quick navigation (Ctrl/⌘ K)">
-                <span>⌘</span><small>K</small>
-            </button>
+            <button class="icon-control magnetic" type="button" id="commandButton" aria-label="Open quick navigation" title="Quick navigation (Ctrl/⌘ K)"><span>⌘</span><small>K</small></button>
             <button class="icon-control magnetic" type="button" id="focusToggle" aria-label="Enable reading focus" aria-pressed="false" title="Reading focus">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12s3.4-6 9-6 9 6 9 6-3.4 6-9 6-9-6-9-6Z"/><circle cx="12" cy="12" r="2.7"/></svg>
             </button>
@@ -72,17 +137,13 @@
         </div>
     </header>
 
-    <aside class="journey-hud" aria-label="Section progress">
-        <div class="hud-copy">
-            <small id="sceneChapter">Section 01</small>
-            <strong id="sceneName">Overview</strong>
-        </div>
-        <div class="hud-progress"><i id="hudProgress"></i></div>
-        <span class="hud-index"><b id="currentSection">01</b><em>/</em><small id="totalSections">07</small></span>
+    <aside class="section-status" aria-label="Section progress">
+        <span><b id="currentSection">01</b><em>/</em><small id="totalSections">07</small></span>
+        <div><small id="sceneChapter">Section 01</small><strong id="sceneName">Overview</strong></div>
+        <i><b id="statusProgress"></b></i>
     </aside>
 
     <aside class="section-rail" aria-label="Section navigation">
-        <div class="rail-line"><i id="railProgress"></i></div>
         <a href="#home" class="rail-dot is-active"><b>01</b><span>Overview</span></a>
         <a href="#about" class="rail-dot"><b>02</b><span>About</span></a>
         <a href="#skills" class="rail-dot"><b>03</b><span>Skills</span></a>
@@ -92,131 +153,80 @@
         <a href="#contact" class="rail-dot"><b>07</b><span>Contact</span></a>
     </aside>
 
-    <div class="world-legend" aria-hidden="true">
-        <span><i class="legend-dot"></i> Interactive 3D environment</span>
-        <span>Blue–gold sunrise theme</span>
-    </div>
-
     <main id="main" class="scroll-stage">
         <section class="panel hero-panel" id="home" data-section="01" data-scene-name="Overview" data-chapter="Section 01" aria-labelledby="hero-title">
-            <div class="panel-atmosphere atmosphere-cyan"></div>
-            <div class="panel-inner hero-layout content-surface">
-                <div class="hero-copy reveal">
-                    <div class="eyebrow"><span class="status-orb"></span> Open to internship opportunities</div>
+            <div class="panel-inner hero-layout">
+                <div class="hero-copy reveal" data-reveal-group>
+                    <div class="eyebrow"><span></span> Open to internship opportunities</div>
                     <p class="hero-kicker">Data Science · Machine Learning · Analytics</p>
-                    <h1 id="hero-title">I build <strong>useful data products</strong> from complex information.</h1>
+                    <h1 id="hero-title">I turn complex data into <em>clear, useful products.</em></h1>
                     <p class="hero-lead">{{ profile.summary }}</p>
                     <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary magnetic"><span>View selected projects</span><b>↓</b></a>
-                        <a href="{% static 'portfolio/docs/Sahrul_Adicandra_Effendy_CV.pdf' %}" class="btn btn-ghost magnetic" target="_blank" rel="noreferrer"><span>Open CV</span><b>↗</b></a>
-                    </div>
-                    <div class="portfolio-signal" aria-label="Professional focus">
-                        <span>Evidence-driven</span><span>Product-oriented</span><span>Clear communication</span>
+                        <a href="#projects" class="btn btn-primary magnetic"><span>Explore selected projects</span><b>↓</b></a>
+                        <a href="{% static 'portfolio/docs/Sahrul_Adicandra_Effendy_CV.pdf' %}" class="btn btn-secondary magnetic" target="_blank" rel="noreferrer"><span>Open CV</span><b>↗</b></a>
                     </div>
                     <div class="hero-facts">
                         <div><small>Current role</small><strong>{{ profile.current_role }}</strong></div>
                         <div><small>Based in</small><strong>{{ profile.location }}</strong></div>
-                        <div><small>Primary focus</small><strong>ML, NLP, Analytics & Data Products</strong></div>
+                        <div><small>Core focus</small><strong>ML, NLP, Analytics & Data Products</strong></div>
                     </div>
                 </div>
-
-                <div class="hero-interface reveal reveal-delay" aria-label="Profile summary">
-                    <div class="interface-ring ring-one"></div>
-                    <div class="interface-ring ring-two"></div>
-                    <article class="hero-card glass-card tilt-card">
-                        <div class="hero-card-top"><span>PROFILE</span><b>2026</b></div>
-                        <div class="hero-card-portrait">
-                            <figure class="portrait-core portrait-photo">
-                                <img src="{% static 'portfolio/img/profile/sahrul-avatar.webp' %}" alt="Portrait of Sahrul Adicandra Effendy">
-                                <span class="portrait-photo-glow"></span>
-                                <i></i>
-                            </figure>
+                <div class="hero-profile reveal reveal-delay" data-float-area>
+                    <div class="profile-frame">
+                        <div class="profile-photo-wrap">
+                            <img src="{% static 'portfolio/img/profile/sahrul-portrait.webp' %}" alt="Portrait of Sahrul Adicandra Effendy">
+                            <div class="photo-tone"></div>
                         </div>
-                        <strong>{{ profile.name }}</strong>
-                        <small>{{ profile.role }}</small>
-                        <div class="hero-card-status"><i></i><span>Available for professional opportunities</span></div>
-                    </article>
-                    <div class="floating-chip chip-a"><small>01</small><strong>Machine Learning</strong></div>
-                    <div class="floating-chip chip-b"><small>02</small><strong>NLP & Analytics</strong></div>
-                    <div class="floating-chip chip-c"><small>03</small><strong>Data Products</strong></div>
+                        <div class="profile-card-copy">
+                            <span>Profile / 2026</span>
+                            <strong>{{ profile.name }}</strong>
+                            <small>{{ profile.role }}</small>
+                        </div>
+                        <div class="profile-index">SA<br><b>01</b></div>
+                    </div>
+                    <div class="profile-note note-a"><small>01</small><strong>Machine Learning</strong></div>
+                    <div class="profile-note note-b"><small>02</small><strong>NLP & Analytics</strong></div>
+                    <div class="profile-note note-c"><small>03</small><strong>Data Products</strong></div>
                 </div>
             </div>
-            <a class="scroll-invitation magnetic" href="#about"><span>Continue to profile</span><i></i></a>
+            <a class="scroll-invitation magnetic" href="#about"><span>Scroll to continue</span><i></i></a>
         </section>
 
         <section class="panel about-panel" id="about" data-section="02" data-scene-name="About" data-chapter="Section 02" aria-labelledby="about-title">
-            <div class="panel-atmosphere atmosphere-violet"></div>
-            <div class="panel-inner split-layout content-surface">
-                <div class="section-intro reveal">
+            <div class="panel-inner about-layout">
+                <div class="section-intro reveal" data-reveal-group>
                     <span class="section-label">02 · About</span>
-                    <h2 id="about-title">A data science student who combines <em>analysis, engineering, and visual communication.</em></h2>
+                    <h2 id="about-title">Analysis, engineering, and visual communication—<em>working together.</em></h2>
                     <p>{{ profile.headline }}</p>
-                    <p class="section-support">My work spans coursework, competitions, internships, and independent projects. I focus on building solutions that are technically sound, understandable, and practical for real users.</p>
-                    <div class="profile-links">
-                        <a href="{{ profile.github }}" target="_blank" rel="noreferrer">GitHub <b>↗</b></a>
-                        <a href="{{ profile.linkedin }}" target="_blank" rel="noreferrer">LinkedIn <b>↗</b></a>
-                        <a href="{{ profile.kaggle }}" target="_blank" rel="noreferrer">Kaggle <b>↗</b></a>
+                    <p class="support-copy">I enjoy moving beyond isolated models: understanding the problem, structuring the data, validating the result, and presenting it through a usable interface.</p>
+                </div>
+                <div class="about-composition reveal reveal-delay">
+                    <figure class="about-photo"><img src="{% static 'portfolio/img/profile/sahrul-avatar.webp' %}" alt="Sahrul Adicandra Effendy on campus"></figure>
+                    <div class="about-quote"><span>Working principle</span><blockquote>“Make the reasoning visible, the engineering reliable, and the result easy to use.”</blockquote></div>
+                    <div class="about-facts">
+                        <div><small>Education</small><strong>{{ profile.education }}</strong><span>{{ profile.education_period }}</span></div>
+                        <div><small>Professional interest</small><strong>Data Science · Machine Learning · Analytics</strong><span>Internship opportunities</span></div>
                     </div>
                 </div>
-
-                <article class="identity-console glass-card reveal reveal-delay tilt-card">
-                    <div class="console-head">
-                        <div><span class="console-dot"></span><span class="console-dot"></span><span class="console-dot"></span></div>
-                        <small>PROFILE OVERVIEW</small>
-                        <b>VERIFIED</b>
-                    </div>
-                    <div class="console-grid">
-                        <div class="console-avatar console-photo">
-                            <img src="{% static 'portfolio/img/profile/sahrul-portrait.webp' %}" alt="Sahrul Adicandra Effendy">
-                            <span class="console-photo-shade"></span>
-                            <small>DATA SCIENCE</small>
-                        </div>
-                        <dl>
-                            <div><dt>Name</dt><dd>{{ profile.name }}</dd></div>
-                            <div><dt>Location</dt><dd>{{ profile.location }}</dd></div>
-                            <div><dt>Education</dt><dd>{{ profile.education }}</dd></div>
-                            <div><dt>Study period</dt><dd>{{ profile.education_period }}</dd></div>
-                            <div><dt>Current role</dt><dd>{{ profile.current_role }}</dd></div>
-                            <div><dt>Career interest</dt><dd>{{ profile.availability }}</dd></div>
-                        </dl>
-                    </div>
-                    <div class="console-tags"><span>Machine Learning</span><span>NLP</span><span>Analytics</span><span>Web Applications</span></div>
-                </article>
-
-                <div class="stat-deck reveal">
-                    {% for stat in stats %}
-                    <article class="stat-module glass-card">
-                        <small>0{{ forloop.counter }}</small>
-                        <strong>{{ stat.value }}</strong>
-                        <span>{{ stat.label }}</span>
-                        <i></i>
-                    </article>
-                    {% endfor %}
+                <div class="stat-strip reveal">
+                    {% for stat in stats %}<div><strong data-count-text="{{ stat.value }}">{{ stat.value }}</strong><span>{{ stat.label }}</span></div>{% endfor %}
                 </div>
             </div>
         </section>
 
-        <section class="panel skills-panel" id="skills" data-section="03" data-scene-name="Skills" data-chapter="Section 03" aria-labelledby="skills-title">
-            <div class="panel-atmosphere atmosphere-gold"></div>
-            <div class="panel-inner skills-layout content-surface">
-                <div class="section-intro reveal">
-                    <span class="section-label">03 · Skills</span>
-                    <h2 id="skills-title">Technical capability supported by <em>product thinking and communication.</em></h2>
-                    <p>I work across the full path from data exploration and modeling to application development, reporting, and visual explanation.</p>
+        <section class="panel skills-panel" id="skills" data-section="03" data-scene-name="Capabilities" data-chapter="Section 03" aria-labelledby="skills-title">
+            <div class="panel-inner skills-layout">
+                <div class="section-intro compact reveal" data-reveal-group>
+                    <span class="section-label">03 · Capabilities</span>
+                    <h2 id="skills-title">A practical toolkit for building <em>end-to-end data work.</em></h2>
+                    <p>From analysis and modeling to deployment, communication, and product thinking.</p>
                 </div>
-
-                <div class="capability-summary glass-card reveal reveal-delay" aria-label="Capability summary">
-                    <span>Core workflow</span>
-                    <strong>Understand → Model → Validate → Build → Explain</strong>
-                    <p>Tools are selected around the problem, not the other way around.</p>
-                </div>
-
-                <div class="skill-deck">
+                <div class="skill-grid">
                     {% for group in skill_groups %}
-                    <article class="skill-module glass-card reveal tilt-card">
-                        <div class="skill-module-head"><span>{{ group.mark }}</span><h3>{{ group.name }}</h3><i></i></div>
-                        <p>{{ group.description }}</p>
-                        <div class="skill-list">{% for skill in group.skills %}<span>{{ skill }}</span>{% endfor %}</div>
+                    <article class="skill-card reveal" style="--delay: {{ forloop.counter0 }}">
+                        <div class="skill-card-top"><span>{{ group.mark }}</span><i></i></div>
+                        <h3>{{ group.name }}</h3><p>{{ group.description }}</p>
+                        <div class="skill-tags">{% for skill in group.skills %}<span>{{ skill }}</span>{% endfor %}</div>
                     </article>
                     {% endfor %}
                 </div>
@@ -224,69 +234,45 @@
         </section>
 
         <section class="panel projects-panel" id="projects" data-section="04" data-scene-name="Selected Projects" data-chapter="Section 04" aria-labelledby="projects-title">
-            <div class="panel-atmosphere atmosphere-coral"></div>
-            <div class="panel-inner projects-layout content-surface">
-                <div class="section-intro section-intro-row reveal">
-                    <div>
-                        <span class="section-label">04 · Selected Projects</span>
-                        <h2 id="projects-title">A concise view of the problems I have worked on and the outcomes I delivered.</h2>
-                    </div>
-                    <a class="projects-github-link magnetic" href="{{ profile.github }}?tab=repositories" target="_blank" rel="noreferrer">View all repositories <b>↗</b></a>
+            <div class="panel-inner projects-layout">
+                <div class="projects-heading reveal">
+                    <div><span class="section-label">04 · Selected Projects</span><h2 id="projects-title">Work that shows the <em>full process.</em></h2></div>
+                    <p>Six selected projects spanning analytics, forecasting, computer vision, NLP, and open-source tooling.</p>
                 </div>
-
-                <div class="project-grid reveal reveal-delay" aria-label="Featured projects">
+                <div class="project-grid">
                     {% for project in projects %}
-                    <article class="project-card accent-{{ project.accent }} tilt-card">
-                        <button class="project-card-open" type="button"
-                            data-project-open
-                            data-title="{{ project.title }}"
-                            data-eyebrow="{{ project.category }}"
-                            data-detail="{{ project.detail }}"
-                            data-impact="{{ project.impact }}"
-                            data-metric="{{ project.metric }}"
-                            data-url="{{ project.url }}"
-                            aria-label="Open details for {{ project.title }}">
-                            <div class="project-card-visual">
-                                <img src="{% static project.image %}" alt="" loading="lazy">
-                                <span class="project-number">{{ project.number }}</span>
-                                <span class="project-metric">{{ project.metric }}</span>
-                            </div>
-                            <div class="project-card-body">
-                                <span class="project-category">{{ project.category }}</span>
-                                <h3>{{ project.title }}</h3>
-                                <p>{{ project.summary }}</p>
-                                <div class="project-stack">{% for item in project.stack %}<span>{{ item }}</span>{% endfor %}</div>
-                                <div class="project-card-footer"><span>View case details</span><b>↗</b></div>
-                            </div>
-                        </button>
+                    <article class="project-card reveal accent-{{ project.accent }}" style="--delay: {{ forloop.counter0 }}">
+                        <div class="project-card-head"><span>{{ project.number }}</span><small>{{ project.category }}</small><b>{{ project.metric }}</b></div>
+                        <div class="project-visual"><img src="{% static project.image %}" alt="" loading="lazy"><i></i></div>
+                        <div class="project-card-body"><h3>{{ project.title }}</h3><p>{{ project.summary }}</p></div>
+                        <div class="project-card-foot">
+                            <div>{% for tech in project.stack|slice:':3' %}<span>{{ tech }}</span>{% endfor %}</div>
+                            <button class="project-open magnetic" type="button" data-project="{{ project.slug }}">View case study <b>↗</b></button>
+                        </div>
                     </article>
                     {% endfor %}
                 </div>
-
+                <div class="additional-projects reveal">
+                    <span>More public work</span>
+                    {% for project in additional_projects %}<a href="{{ project.url }}" target="_blank" rel="noreferrer"><strong>{{ project.title }}</strong><small>{{ project.label }}</small><b>↗</b></a>{% endfor %}
+                    <a href="{{ profile.github }}" target="_blank" rel="noreferrer"><strong>View all GitHub repositories</strong><small>Public source code and project documentation</small><b>↗</b></a>
+                </div>
             </div>
         </section>
 
         <section class="panel journey-panel" id="journey" data-section="05" data-scene-name="Experience" data-chapter="Section 05" aria-labelledby="journey-title">
-            <div class="panel-atmosphere atmosphere-jade"></div>
-            <div class="panel-inner journey-layout content-surface">
-                <div class="section-intro reveal">
-                    <span class="section-label">05 · Experience & Education</span>
-                    <h2 id="journey-title">A developing profile shaped by <em>technical work, leadership, and communication.</em></h2>
-                    <p>My experience combines applied data work with organizational leadership and visual communication responsibilities.</p>
+            <div class="panel-inner journey-layout">
+                <div class="section-intro reveal" data-reveal-group>
+                    <span class="section-label">05 · Experience</span>
+                    <h2 id="journey-title">Learning through <em>real responsibilities.</em></h2>
+                    <p>Professional work, leadership, campus involvement, and formal education.</p>
                 </div>
-
-                <div class="route-map reveal reveal-delay">
-                    <div class="route-spine"><i id="routeTrain"></i></div>
+                <div class="timeline">
                     {% for item in journey %}
-                    <article class="route-stop" data-route-stop="{{ forloop.counter0 }}">
-                        <span class="route-node"><i></i></span>
-                        <time>{{ item.period }}</time>
-                        <div class="route-content glass-card">
-                            <span>{{ item.type }}</span>
-                            <h3>{{ item.role }}</h3>
-                            <strong>{{ item.org }}</strong>
-                            <p>{{ item.description }}</p>
-                        </div>
+                    <article class="timeline-item reveal" style="--delay: {{ forloop.counter0 }}">
+                        <div class="timeline-marker"><i></i><span>{{ forloop.counter|stringformat:'02d' }}</span></div>
+                        <div class="timeline-period">{{ item.period }}</div>
+                        <div class="timeline-content"><small>{{ item.type }}</small><h3>{{ item.role }}</h3><strong>{{ item.org }}</strong><p>{{ item.description }}</p></div>
                     </article>
                     {% endfor %}
                 </div>
@@ -294,90 +280,68 @@
         </section>
 
         <section class="panel achievements-panel" id="achievements" data-section="06" data-scene-name="Recognition" data-chapter="Section 06" aria-labelledby="achievements-title">
-            <div class="panel-atmosphere atmosphere-royal"></div>
-            <div class="panel-inner achievements-layout content-surface">
-                <div class="section-intro reveal">
+            <div class="panel-inner achievement-layout">
+                <div class="section-intro reveal" data-reveal-group>
                     <span class="section-label">06 · Recognition</span>
-                    <h2 id="achievements-title">Selected recognition that reflects <em>consistency, learning, and competition experience.</em></h2>
-                    <p>These milestones complement the project portfolio and show continued development across technical and academic settings.</p>
+                    <h2 id="achievements-title">Milestones that reflect <em>consistent growth.</em></h2>
+                    <p>Competition results, academic recognition, and continuing technical development.</p>
                 </div>
-
-                <div class="recognition-grid reveal reveal-delay">
+                <div class="achievement-grid">
                     {% for achievement in achievements %}
-                    <article class="recognition-card glass-card tilt-card">
-                        <span class="recognition-index">{{ achievement.icon }}</span>
-                        <small>{{ achievement.meta }}</small>
-                        <h3>{{ achievement.title }}</h3>
-                        <p>{{ achievement.description }}</p>
-                        <i></i>
+                    <article class="achievement-card reveal" style="--delay: {{ forloop.counter0 }}">
+                        <div class="achievement-number">{{ achievement.icon }}</div>
+                        <div><small>{{ achievement.meta }}</small><h3>{{ achievement.title }}</h3><p>{{ achievement.description }}</p></div>
+                        <i class="achievement-line"></i>
                     </article>
                     {% endfor %}
                 </div>
-
-                <blockquote class="portfolio-principle reveal">
-                    <span>Portfolio principle</span>
-                    <p>Strong work should make the problem, reasoning, implementation, and outcome easy to understand.</p>
-                </blockquote>
+                <div class="recognition-note reveal"><span>Current direction</span><strong>Building deeper expertise in machine learning systems, analytics, and responsible data products.</strong></div>
             </div>
         </section>
 
         <section class="panel contact-panel" id="contact" data-section="07" data-scene-name="Contact" data-chapter="Section 07" aria-labelledby="contact-title">
-            <div class="panel-atmosphere atmosphere-dawn"></div>
-            <div class="panel-inner contact-layout content-surface">
-                <div class="contact-copy reveal">
+            <div class="panel-inner contact-layout">
+                <div class="contact-copy reveal" data-reveal-group>
                     <span class="section-label">07 · Contact</span>
-                    <h2 id="contact-title">Interested in discussing an internship, project, or technical collaboration?</h2>
-                    <p>The most reliable ways to reach me are through email or LinkedIn. You can also review my public work on GitHub and Kaggle.</p>
-                    <div class="availability-note"><i></i><span>{{ profile.availability }}</span></div>
+                    <h2 id="contact-title">Let’s discuss a project, internship, or <em>data problem worth solving.</em></h2>
+                    <p>{{ profile.availability }}. The fastest way to reach me is through email or LinkedIn.</p>
+                    <a class="contact-email magnetic" href="mailto:{{ profile.email }}"><span>{{ profile.email }}</span><b>↗</b></a>
+                    <div class="availability"><i></i><span>Based in {{ profile.location }}</span></div>
                 </div>
-
-                <div class="contact-directory reveal reveal-delay" aria-label="Professional contact links">
-                    <a class="contact-primary glass-card magnetic" href="mailto:{{ profile.email }}">
-                        <span class="contact-icon">@</span>
-                        <div><small>Email</small><strong>{{ profile.email }}</strong><p>Best for formal opportunities and collaboration enquiries.</p></div>
-                        <b>↗</b>
-                    </a>
-                    <div class="contact-link-grid">
-                        <a class="glass-card magnetic" href="{{ profile.linkedin }}" target="_blank" rel="noreferrer"><small>LinkedIn</small><strong>Professional profile</strong><span>Message or connect</span><b>↗</b></a>
-                        <a class="glass-card magnetic" href="{{ profile.github }}" target="_blank" rel="noreferrer"><small>GitHub</small><strong>Code & repositories</strong><span>Review public projects</span><b>↗</b></a>
-                        <a class="glass-card magnetic" href="{{ profile.kaggle }}" target="_blank" rel="noreferrer"><small>Kaggle</small><strong>Data science activity</strong><span>Competitions & notebooks</span><b>↗</b></a>
-                        <a class="glass-card magnetic" href="{% static 'portfolio/docs/Sahrul_Adicandra_Effendy_CV.pdf' %}" target="_blank" rel="noreferrer"><small>Curriculum Vitae</small><strong>View full CV</strong><span>Education, skills & projects</span><b>↗</b></a>
-                    </div>
+                <div class="contact-links reveal reveal-delay">
+                    <a href="{{ profile.linkedin }}" target="_blank" rel="noreferrer" class="contact-link magnetic"><span>01</span><div><small>Professional network</small><strong>LinkedIn</strong></div><b>↗</b></a>
+                    <a href="{{ profile.github }}" target="_blank" rel="noreferrer" class="contact-link magnetic"><span>02</span><div><small>Source code & repositories</small><strong>GitHub</strong></div><b>↗</b></a>
+                    <a href="{{ profile.kaggle }}" target="_blank" rel="noreferrer" class="contact-link magnetic"><span>03</span><div><small>Competitions & notebooks</small><strong>Kaggle</strong></div><b>↗</b></a>
+                    <a href="{% static 'portfolio/docs/Sahrul_Adicandra_Effendy_CV.pdf' %}" target="_blank" rel="noreferrer" class="contact-link magnetic"><span>04</span><div><small>Professional profile</small><strong>Curriculum Vitae</strong></div><b>↗</b></a>
                 </div>
+                <footer><span>© 2026 Sahrul Adicandra Effendy</span><a href="#home">Back to top ↑</a></footer>
             </div>
-            <footer class="site-footer"><span>Designed and built with Django · Native WebGL · 2026</span><a href="#home">Back to top ↑</a></footer>
         </section>
     </main>
 
-    <dialog class="project-modal" id="projectModal" aria-labelledby="modalTitle">
-        <div class="modal-frame"></div>
-        <button type="button" class="modal-close magnetic" data-modal-close aria-label="Close project details">×</button>
-        <span class="modal-eyebrow" id="modalEyebrow"></span>
-        <h2 id="modalTitle"></h2>
-        <p id="modalDetail"></p>
-        <div class="modal-impact"><small>Key outcome</small><strong id="modalImpact"></strong></div>
-        <div class="modal-footer"><span id="modalMetric"></span><a id="modalLink" href="#" target="_blank" rel="noreferrer">View repository ↗</a></div>
+    <dialog class="project-dialog" id="projectDialog">
+        <button class="dialog-close magnetic" type="button" aria-label="Close project details">×</button>
+        {% for project in projects %}
+        <article class="dialog-project" data-dialog-project="{{ project.slug }}">
+            <div class="dialog-visual accent-{{ project.accent }}"><img src="{% static project.image %}" alt=""><span>{{ project.number }}</span></div>
+            <div class="dialog-copy"><small>{{ project.category }}</small><h2>{{ project.title }}</h2><p>{{ project.detail }}</p><div class="dialog-impact"><span>Project value</span><strong>{{ project.impact }}</strong></div><div class="dialog-stack">{% for tech in project.stack %}<span>{{ tech }}</span>{% endfor %}</div><a href="{{ project.url }}" target="_blank" rel="noreferrer">Open GitHub repository <b>↗</b></a></div>
+        </article>
+        {% endfor %}
     </dialog>
 
-    <dialog class="command-palette" id="commandPalette" aria-labelledby="commandTitle">
-        <div class="command-head"><span id="commandTitle">Quick navigation</span><kbd>ESC</kbd></div>
-        <label class="command-search"><span>⌕</span><input id="commandInput" type="search" placeholder="Search a section or action…" autocomplete="off"></label>
-        <div class="command-list" id="commandList">
-            <button data-command-target="#home"><span>01</span><strong>Overview</strong><small>Introduction</small></button>
-            <button data-command-target="#about"><span>02</span><strong>About</strong><small>Profile</small></button>
-            <button data-command-target="#skills"><span>03</span><strong>Skills</strong><small>Capabilities</small></button>
-            <button data-command-target="#projects"><span>04</span><strong>Selected Projects</strong><small>Project overview</small></button>
-            <button data-command-target="#journey"><span>05</span><strong>Experience</strong><small>Work and education</small></button>
-            <button data-command-target="#achievements"><span>06</span><strong>Recognition</strong><small>Selected achievements</small></button>
-            <button data-command-target="#contact"><span>07</span><strong>Contact</strong><small>Professional links</small></button>
-            <a href="{{ profile.github }}" target="_blank" rel="noreferrer"><span>↗</span><strong>Open GitHub</strong><small>External link</small></a>
-        </div>
-        <div class="command-footer"><span><kbd>↑</kbd><kbd>↓</kbd> Navigate</span><span><kbd>Enter</kbd> Select</span></div>
+    <dialog class="command-dialog" id="commandDialog">
+        <div class="command-head"><div><small>Quick navigation</small><strong>Where would you like to go?</strong></div><button type="button" aria-label="Close quick navigation">Esc</button></div>
+        <nav>
+            <a href="#home"><span>01</span><strong>Overview</strong><small>Introduction and current focus</small></a>
+            <a href="#about"><span>02</span><strong>About</strong><small>Background and working principles</small></a>
+            <a href="#skills"><span>03</span><strong>Capabilities</strong><small>Technical and communication toolkit</small></a>
+            <a href="#projects"><span>04</span><strong>Selected Projects</strong><small>Six featured case studies</small></a>
+            <a href="#journey"><span>05</span><strong>Experience</strong><small>Professional, leadership, and education</small></a>
+            <a href="#achievements"><span>06</span><strong>Recognition</strong><small>Competitions and academic milestones</small></a>
+            <a href="#contact"><span>07</span><strong>Contact</strong><small>Professional links and email</small></a>
+        </nav>
     </dialog>
 
-    <div class="reading-toast" id="readingToast" role="status" aria-live="polite">Reading focus enabled</div>
-    <div class="mobile-journey-bar" aria-hidden="true"><i id="mobileProgress"></i></div>
-    <script src="{% static 'portfolio/js/world-engine.js' %}" defer></script>
-    <script src="{% static 'portfolio/js/main.js' %}" defer></script>
+    <script src="{% static 'portfolio/js/main.js' %}"></script>
 </body>
 </html>
